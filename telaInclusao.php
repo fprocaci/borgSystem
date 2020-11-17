@@ -54,7 +54,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Tela de consulta</h1>
+            <h1 class="m-0 text-dark">Tela de Inclusão</h1>
             <hr>
           </div><!-- /.col -->
           <!--<div class="col-sm-6">
@@ -72,24 +72,43 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-        <?php 
-          echo "<script type='text/javascript'>toastr.success('Have Fun')</script>";
-        ?>
-          <!-- Button trigger modal -->
-          <form action="telaInclusao.php">
-            <button type="submit" class="btn btn-success" >
-              Incluir Registro
-            </button>
-          </form>
+            <div class="card border-success col-12">
+                <div class="card-header text-center"><h3>Incluir Registro</h3></div>
+                    <div class="card-body text-center">
+                        <form method="POST" action="phpclasses/incluirRegistro.php">
+                            <div class="form-group">
+                                <label for="numeroProcesso">Número do Processo</label>
+                                <input class="form-control form-control-sm offset-md-4 col-4" type="text" name="numeroProcesso" placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="autor">Autor</label>
+                                <input class="form-control form-control-sm offset-md-4 col-4" type="text" name="autor" placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reu">Réu</label>
+                                <input class="form-control form-control-sm offset-md-4 col-4" type="text" name="reu" placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="valor">Valor</label>
+                                <input class="form-control form-control-sm offset-md-4 col-4" type="text" name="valor" placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="situacao">Situação</label>
+                                <input class="form-control form-control-sm offset-md-4 col-4" type="text" name="situacao" placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="perito">Perito</label>
+                                <input class="form-control form-control-sm offset-md-4 col-4" type="text" name="perito" placeholder="">
+                            </div>
+                            <button type="submit" class="btn btn-success">Incluir</button>
+                            <a href="starter.php"><button type="button" class="btn btn-outline-danger">Cancelar</button></a>
+                        </form>                      
+                    </div>
+                </div>
           
-          <?php include("pages/tables/borgSystemTable.php")?>
-          <!-- Modal de inclusão-->
-          <?php include("phpclasses/modalInclusao.php")?>
-          <?php include("phpclasses/modalAlteracao.php")?>
-          <?php include("phpclasses/modalExclusao.php")?>
-          </div>
+            </div>
         <!-- /.row -->
-      </div><!-- /.container-fluid -->
+        </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
   </div>
@@ -105,4 +124,3 @@
   </aside>
   <!-- /.control-sidebar -->
   <?php include("phpclasses/footer.php")?>
-  

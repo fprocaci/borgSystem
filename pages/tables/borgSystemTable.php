@@ -2,7 +2,7 @@
             $queryGetRegistros = "select * from registro";
             $resultCount = mysqli_query($conn,"select count(*) as total_records from registro");
             $total_records = mysqli_fetch_array($resultCount);
-            $total_records_per_page = 5;
+            $total_records_per_page = 10;
             $total_records = $total_records['total_records'];
             $page_no = (isset($_GET['page_no']) && $_GET['page_no']!="")?
             $page_no = $_GET['page_no']: $page_no = 1;
@@ -18,36 +18,41 @@
             
             $second_last = $total_no_of_pages - 1;
           ?>
+          
           <table class="table table-hover table-bordered">
             <thead>
               <tr class="bg-secondary">
-                <th scope="col">#</th>
+              <!--  <th scope="col">#</th> -->
                 <th scope="col">Numero do Processo</th>
                 <th scope="col">Autor</th>
                 <th scope="col">Réu</th>
                 <th scope="col">Valor</th>
                 <th scope="col">Situação</th>
                 <th scope="col">Perito</th>
+                <th scope="col">Ação</th>
               </tr>
             </thead>
             <tbody>
             <?php 
               while($row = $resultGetRegistros -> fetch_assoc()) {
               echo "<tr>";
-              echo "<th scope='row'>".$row["indice"]."</th>";
-              echo "<td>".$row["numeroProcesso"]."</td>";
+         /*     echo "<th scope='row'>".$row["indice"]."</th>"; */
+              echo "<td scope='row'>".$row["numeroProcesso"]."</td>";
               echo "<td>".$row["autor"]."</td>";
               echo "<td>".$row["reu"]."</td>";
               echo "<td>".$row["valor"]."</td>";
               echo "<td>".$row["situacao"]."</td>";
               echo "<td>".$row["perito"]."</td>";
+              echo "<td><button type='button' class='btn btn-sm btn-outline-primary' data-toggle='modal' data-target='#modalAlteracao'>Editar</button>";
+              echo "<button type='button' class='btn btn-sm btn-outline-danger' data-toggle='modal' data-target='#modalExclusao'>Excluir</button>";
+              echo"</td>";
               echo "</tr>";
               }
 
               mysqli_close($conn)
             ?>
                 
-              
+            
             </tbody>
           </table>
         <!--<div>
@@ -86,3 +91,5 @@
                 echo "<li class='page-item'><a class='page-link' href='?page_no=$total_no_of_pages'>Ultima &rsaquo;&rsaquo;</a></li>";
              ?>
         </ul>
+
+        
