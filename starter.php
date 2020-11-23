@@ -72,9 +72,7 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-        <?php 
-          echo "<script type='text/javascript'>toastr.success('Have Fun')</script>";
-        ?>
+
           <!-- Button trigger modal -->
           <form action="telaInclusao.php">
             <button type="submit" class="btn btn-success" >
@@ -84,9 +82,6 @@
           
           <?php include("pages/tables/borgSystemTable.php")?>
           <!-- Modal de inclusão-->
-          <?php include("phpclasses/modalInclusao.php")?>
-          <?php include("phpclasses/modalAlteracao.php")?>
-          <?php include("phpclasses/modalExclusao.php")?>
           </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

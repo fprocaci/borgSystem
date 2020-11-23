@@ -9,7 +9,7 @@
     $situacao = $_POST['situacao'];
     $perito = $_POST['perito'];
 
-    $queryInsert = "Insert into registro values ('$numeroProcesso','$autor','$reu','$valor','$situacao','$perito')";
+    $queryInsert = "update registro set numeroProcesso = '$numeroProcesso' where numeroProcesso = '$numeroProcesso'";
     $result = mysqli_query($conn,$queryInsert);
 
     if(mysqli_affected_rows($conn) != 0){

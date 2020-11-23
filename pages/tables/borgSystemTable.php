@@ -21,7 +21,7 @@
           
           <table class="table table-hover table-bordered">
             <thead>
-              <tr class="bg-secondary">
+              <tr class="bg-info">
               <!--  <th scope="col">#</th> -->
                 <th scope="col">Numero do Processo</th>
                 <th scope="col">Autor</th>
@@ -43,8 +43,8 @@
               echo "<td>".$row["valor"]."</td>";
               echo "<td>".$row["situacao"]."</td>";
               echo "<td>".$row["perito"]."</td>";
-              echo "<td><button type='button' class='btn btn-sm btn-outline-primary' data-toggle='modal' data-target='#modalAlteracao'>Editar</button>";
-              echo "<button type='button' class='btn btn-sm btn-outline-danger' data-toggle='modal' data-target='#modalExclusao'>Excluir</button>";
+              echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-primary col-12' data-toggle='modal' data-target='#modalAlteracao'>Editar</button></a>";
+              echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm col-12 btn-danger'>Excluir</button></a>";
               echo"</td>";
               echo "</tr>";
               }

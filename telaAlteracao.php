@@ -54,7 +54,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Tela de Inclusão</h1>
+            <h1 class="m-0 text-dark">Tela de Alteração</h1>
             <hr>
           </div><!-- /.col -->
           <!--<div class="col-sm-6">
@@ -69,38 +69,45 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
+    <?php 
+        $numeroProcesso = $_REQUEST['id'];
+        $query = "select * from registro where numeroProcesso = '$numeroProcesso'";
+        $resultado = mysqli_query($conn,$query);
+        $registro = mysqli_fetch_assoc($resultado);
+
+    ?>
     <div class="content">
       <div class="container-fluid">
         <div class="row">
             <div class="card border-success col-12">
-                <div class="card-header bg-success text-center"><h3>Incluir Registro</h3></div>
+                <div class="card-header bg-primary text-center"><h3>Alterar Registro</h3></div>
                     <div class="card-body text-center">
-                        <form method="POST" action="phpclasses/incluirRegistro.php">
+                        <form method="POST" action="phpclasses/alterarRegistro.php">
                             <div class="form-group">
                                 <label for="numeroProcesso">Número do Processo</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="numeroProcesso" placeholder="" required>
+                                <input disabled class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['numeroProcesso'] ?>" type="text" name="numeroProcesso" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="autor">Autor</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="autor" placeholder="" required>
+                                <input class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['autor'] ?>" type="text" name="autor" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="reu">Réu</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="reu" placeholder="" required>
+                                <input class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['reu'] ?>" type="text" name="reu" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="valor">Valor</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="valor" placeholder="" required>
+                                <input class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['valor'] ?>" type="text" name="valor" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="situacao">Situação</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="situacao" placeholder="" required>
+                                <input class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['situacao'] ?>" type="text" name="situacao" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="perito">Perito</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="perito" placeholder="">
+                                <input class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['perito'] ?>" type="text" name="perito" placeholder="">
                             </div>
-                            <button type="submit" class="btn btn-success">Incluir</button>
+                            <button type="submit" class="btn btn-success">Salvar</button>
                             <a href="starter.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
                         </form>                      
                     </div>
