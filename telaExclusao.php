@@ -81,31 +81,31 @@
         <div class="row">
             <div class="card border-success col-12">
                 <div class="card-header bg-danger text-center"><h3>Excluir Registro</h3></div>
-                    <div class="card-body text-center">
-                        <form>
+                    <div class="card-body">
+                        <form class="offset-md-4">
                             <div class="form-group">
                                 <label for="numeroProcesso">Número do Processo</label>
-                                <input  class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['numeroProcesso'] ?>" type="text" name="numeroProcesso" placeholder="" required disabled>
+                                <input  class="form-control form-control-sm col-6" value="<?php echo $registro['numeroProcesso'] ?>" type="text" name="numeroProcesso" placeholder="" required disabled>
                             </div>
                             <div class="form-group">
                                 <label for="autor">Autor</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['autor'] ?>" type="text" name="autor" placeholder="" required disabled>
+                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['autor'] ?>" type="text" name="autor" placeholder="" required disabled>
                             </div>
                             <div class="form-group">
                                 <label for="reu">Réu</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['reu'] ?>" type="text" name="reu" placeholder="" required disabled>
+                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['reu'] ?>" type="text" name="reu" placeholder="" required disabled>
                             </div>
                             <div class="form-group">
                                 <label for="valor">Valor</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['valor'] ?>" type="text" name="valor" placeholder="" required disabled>
+                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['valor'] ?>" type="text" name="valor" placeholder="" required disabled>
                             </div>
                             <div class="form-group">
                                 <label for="situacao">Situação</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['situacao'] ?>" type="text" name="situacao" placeholder="" required disabled>
+                                <input class="form-control  form-control-sm col-6" value="<?php echo $registro['situacao'] ?>" type="text" name="situacao" placeholder="" required disabled>
                             </div>
                             <div class="form-group">
                                 <label for="perito">Perito</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" value="<?php echo $registro['perito'] ?>" type="text" name="perito" placeholder="" disabled>
+                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['perito'] ?>" type="text" name="perito" placeholder="" disabled>
                             </div>
                             <a href="phpclasses/excluirRegistro.php?id='<?php echo $registro["numeroProcesso"]?>'"><button type="button" class="btn btn-success">Excluir</button></a>
                             <a href="starter.php"><button type="button" class="btn btn-danger">Cancelar</button></a>

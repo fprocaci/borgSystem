@@ -18,8 +18,7 @@
             
             $second_last = $total_no_of_pages - 1;
           ?>
-          
-          <table class="table table-hover table-bordered">
+          <table class="table  table-hover table-bordered">
             <thead>
               <tr class="bg-info">
               <!--  <th scope="col">#</th> -->
@@ -28,7 +27,7 @@
                 <th scope="col">Réu</th>
                 <th scope="col">Valor</th>
                 <th scope="col">Situação</th>
-                <th scope="col">Perito</th>
+                <th scope="col">Colaborador</th>
                 <th scope="col">Ação</th>
               </tr>
             </thead>
@@ -40,7 +39,7 @@
               echo "<td scope='row'>".$row["numeroProcesso"]."</td>";
               echo "<td>".$row["autor"]."</td>";
               echo "<td>".$row["reu"]."</td>";
-              echo "<td>".$row["valor"]."</td>";
+              echo "<td>R$".substr($row["valor"],0,1).".".substr($row["valor"],1,10)."</td>";
               echo "<td>".$row["situacao"]."</td>";
               echo "<td>".$row["perito"]."</td>";
               echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-primary col-12' data-toggle='modal' data-target='#modalAlteracao'>Editar</button></a>";

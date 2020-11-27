@@ -74,31 +74,31 @@
         <div class="row">
             <div class="card border-success col-12">
                 <div class="card-header bg-success text-center"><h3>Incluir Registro</h3></div>
-                    <div class="card-body text-center">
-                        <form method="POST" action="phpclasses/incluirRegistro.php">
+                    <div class="card-body">
+                        <form method="POST" class="offset-md-4" action="phpclasses/incluirRegistro.php">
                             <div class="form-group">
                                 <label for="numeroProcesso">Número do Processo</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="numeroProcesso" placeholder="" required>
+                                <input class="form-control form-control-sm col-6" type="text" name="numeroProcesso" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="autor">Autor</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="autor" placeholder="" required>
+                                <input class="form-control form-control-sm col-6" type="text" name="autor" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="reu">Réu</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="reu" placeholder="" required>
+                                <input class="form-control form-control-sm col-6" type="text" name="reu" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="valor">Valor</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="valor" placeholder="" required>
+                                <input class="form-control form-control-sm col-6" type="text" name="valor" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="situacao">Situação</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="situacao" placeholder="" required>
+                                <input class="form-control form-control-sm col-6" type="text" name="situacao" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="perito">Perito</label>
-                                <input class="form-control text-center form-control-sm offset-md-4 col-4" type="text" name="perito" placeholder="">
+                                <input class="form-control form-control-sm col-6" type="text" name="perito" placeholder="">
                             </div>
                             <button type="submit" class="btn btn-success">Incluir</button>
                             <a href="starter.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
