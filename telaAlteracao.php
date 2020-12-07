@@ -107,7 +107,7 @@
                                 <label for="perito">Perito</label>
                                 <input class="form-control form-control-sm col-6" value="<?php echo $registro['perito'] ?>" type="text" name="perito" placeholder="">
                             </div>
-                            <button type="submit" class="btn btn-success">Salvar</button>
+                            <button type="submit" class="btn btn-success"><i class="far fa-share-square"></i>Salvar</button>
                             <a href="starter.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
                         </form>                      
                     </div>

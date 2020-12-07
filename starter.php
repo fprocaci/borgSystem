@@ -75,8 +75,9 @@
 
           <!-- Button trigger modal -->
           <form action="telaInclusao.php">
-            <button type="submit" class="btn btn-success" >
-              Incluir Registro
+            <button type="submit" class="btn btn-sm btn-success" >
+              <i class="far fa-share-square"></i>
+                Incluir Registro
             </button>
           </form>
           

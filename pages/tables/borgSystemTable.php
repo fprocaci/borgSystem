@@ -1,5 +1,6 @@
           <?php 
             $queryGetRegistros = "select * from registro";
+            //$queryGetRegistros = "select * from historico";
             $resultCount = mysqli_query($conn,"select count(*) as total_records from registro");
             $total_records = mysqli_fetch_array($resultCount);
             $total_records_per_page = 10;
@@ -11,7 +12,10 @@
             $total_no_of_pages = ceil($total_records / $total_records_per_page);
 
             $resultGetRegistros = mysqli_query($conn,"select * from registro LIMIT $offset,$total_records_per_page");
-                        
+            //$resultGetHistorico = mysqli_query($conn,$queryGetRegistros); 
+            $resultGetHistorico = mysqli_query($conn,"select * from historico");
+            
+
             $previous_page = $page_no - 1;
             $next_page = $page_no + 1;
             $adjacents = "2";
@@ -39,11 +43,28 @@
               echo "<td scope='row'>".$row["numeroProcesso"]."</td>";
               echo "<td>".$row["autor"]."</td>";
               echo "<td>".$row["reu"]."</td>";
-              echo "<td>R$".substr($row["valor"],0,1).".".substr($row["valor"],1,10)."</td>";
-              echo "<td>".$row["situacao"]."</td>";
+              $campoValor;
+              $campoValor = (strlen($row["valor"]) > 3)?
+              "<td>R$".substr($row["valor"],0,1).".".substr($row["valor"],1,10)."</td>":
+              "<td>R$".$row["valor"]."</td>";
+              echo $campoValor;
+              echo "<td>";
+              echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
+              echo " Histórico";
+              echo "<div class='collapse' id='collapseButton'>";
+              echo    "<ul class='list-group list-group-item-action'>";
+              
+              while($rowHistorico = $resultGetHistorico -> fetch_assoc()){
+                if($row["numeroProcesso"] == $rowHistorico["numeroProcesso"])
+                  echo "<li class='list-group-item'>".$rowHistorico["situacao"]." - ".$rowHistorico["perito"]."</li>";
+              }
+
+              echo "  </ul>";
+              echo "</div>";
+              echo "</a></td>";
               echo "<td>".$row["perito"]."</td>";
-              echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-primary col-12' data-toggle='modal' data-target='#modalAlteracao'>Editar</button></a>";
-              echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm col-12 btn-danger'>Excluir</button></a>";
+              echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-xs btn-primary col-16' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i>Editar</button></a>";
+              echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-xs col-16 btn-danger'><i class='far fa-trash-alt'></i>Excluir</button></a>";
               echo"</td>";
               echo "</tr>";
               }

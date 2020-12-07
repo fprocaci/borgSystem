@@ -107,7 +107,11 @@
                                 <label for="perito">Perito</label>
                                 <input class="form-control form-control-sm col-6" value="<?php echo $registro['perito'] ?>" type="text" name="perito" placeholder="" disabled>
                             </div>
-                            <a href="phpclasses/excluirRegistro.php?id='<?php echo $registro["numeroProcesso"]?>'"><button type="button" class="btn btn-success">Excluir</button></a>
+                            <a href="phpclasses/excluirRegistro.php?id='<?php echo $registro["numeroProcesso"]?>'">
+                              <button type="button" class="btn btn-success">
+                                Excluir
+                              </button>
+                            </a>
                             <a href="starter.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
                         </form>                      
                     </div>

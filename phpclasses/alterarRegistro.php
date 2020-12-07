@@ -9,7 +9,7 @@
     $situacao = $_POST['situacao'];
     $perito = $_POST['perito'];
 
-    $queryInsertSituacao = "insert into historico values ('$numeroProcesso','$situacao')";
+    $queryInsertSituacao = "insert into historico values ('$numeroProcesso','$situacao','$perito')";
 
     $queryInsert = "update registro set autor = '$autor', reu = '$reu', valor= '$valor', situacao = '$situacao'
     ,perito = '$perito' where numeroProcesso = '$numeroProcesso'";

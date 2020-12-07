@@ -26,6 +26,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/badd8455af.js" crossorigin="anonymous"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
   <!-- Google Font: Source Sans Pro -->
