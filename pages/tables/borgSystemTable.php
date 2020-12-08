@@ -22,6 +22,22 @@
             
             $second_last = $total_no_of_pages - 1;
           ?>
+          <form class="form-inline" action="telaInclusao.php">
+            <div class="input-group">
+              <span class="input-group-text" id="filtro">Número do Processo</span>
+              <input type="text"  aria-label="numeroProcesso" aria-describedby="filtro">
+              <span class="input-group-text" id="filtro"><i class="fas fa-search"></i></span>
+              <div style="float:right">
+                <a href="telaInclusao.php">
+                  <button type="submit" style="float:right" class="btn btn-success" >
+                    <i class="far fa-share-square"></i>
+                      Incluir Registro
+                  </button>
+                </a>
+              </div>
+              
+            </div>
+          </form>
           <table class="table  table-hover table-bordered">
             <thead>
               <tr class="bg-info">
@@ -63,8 +79,8 @@
               echo "</div>";
               echo "</a></td>";
               echo "<td>".$row["perito"]."</td>";
-              echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-xs btn-primary col-16' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i>Editar</button></a>";
-              echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-xs col-16 btn-danger'><i class='far fa-trash-alt'></i>Excluir</button></a>";
+              echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-outline-primary col-12' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i>Editar</button></a>";
+              echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm col-12 btn-outline-danger'><i class='far fa-trash-alt'></i>Excluir</button></a>";
               echo"</td>";
               echo "</tr>";
               }

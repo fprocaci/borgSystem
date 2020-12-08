@@ -80,7 +80,7 @@
       <div class="container-fluid">
         <div class="row">
             <div class="card border-success col-12">
-                <div class="card-header bg-danger text-center"><h3>Excluir Registro</h3></div>
+                <div class="card-header bg-info text-center"><h3><i class="fas fa-user-times" style="margin-right:10px;"></i>Excluir Registro</h3></div>
                     <div class="card-body">
                         <form class="offset-md-4">
                             <div class="form-group">
@@ -108,11 +108,17 @@
                                 <input class="form-control form-control-sm col-6" value="<?php echo $registro['perito'] ?>" type="text" name="perito" placeholder="" disabled>
                             </div>
                             <a href="phpclasses/excluirRegistro.php?id='<?php echo $registro["numeroProcesso"]?>'">
-                              <button type="button" class="btn btn-success">
+                              <button type="button" class="btn btn-outline-primary">
+                                <i class="fas fa-trash-alt" style="margin-right:10px;"></i>
                                 Excluir
                               </button>
                             </a>
-                            <a href="starter.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                            <a href="starter.php">
+                              <button type="button" class="btn btn-outline-danger">
+                                <i class="far fa-times-circle" style="margin-right:10px;"></i>
+                                Cancelar
+                              </button>
+                            </a>
                         </form>                      
                     </div>
                 </div>

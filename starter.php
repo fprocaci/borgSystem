@@ -74,13 +74,6 @@
         <div class="row">
 
           <!-- Button trigger modal -->
-          <form action="telaInclusao.php">
-            <button type="submit" class="btn btn-sm btn-success" >
-              <i class="far fa-share-square"></i>
-                Incluir Registro
-            </button>
-          </form>
-          
           <?php include("pages/tables/borgSystemTable.php")?>
           <!-- Modal de inclusão-->
           </div>

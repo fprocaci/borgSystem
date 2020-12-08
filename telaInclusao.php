@@ -73,7 +73,7 @@
       <div class="container-fluid">
         <div class="row">
             <div class="card border-success col-12">
-                <div class="card-header bg-success text-center"><h3>Incluir Registro</h3></div>
+                <div class="card-header bg-info text-center"><h3><i style="margin-right:10px" class="fas fa-user-plus"></i>Incluir Registro</h3></div>
                     <div class="card-body">
                         <form method="POST" class="offset-md-4" action="phpclasses/incluirRegistro.php">
                             <div class="form-group">
@@ -100,8 +100,16 @@
                                 <label for="perito">Perito</label>
                                 <input class="form-control form-control-sm col-6" type="text" name="perito" placeholder="">
                             </div>
-                            <button type="submit" class="btn btn-success">Incluir</button>
-                            <a href="starter.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                            <button type="submit" class="btn btn-outline-primary">
+                              <i class="fas fa-plus" style="margin-right:10px;"></i>
+                              Incluir
+                            </button>
+                            <a href="starter.php">
+                              <button type="button" class="btn btn-outline-danger">
+                                <i class="fas fa-times" style="margin-right:10px;"></i>
+                                Cancelar
+                              </button>
+                            </a>
                         </form>                      
                     </div>
                 </div>

@@ -80,7 +80,7 @@
       <div class="container-fluid">
         <div class="row">
             <div class="card border-success col-12">
-                <div class="card-header bg-primary text-center"><h3>Alterar Registro</h3></div>
+                <div class="card-header bg-info text-center"><h3><i style="margin-right:10px;" class="fas fa-user-edit"></i>Alterar Registro</h3></div>
                     <div class="card-body">
                         <form method="POST" class="offset-md-4" action="phpclasses/alterarRegistro.php">
                             <div class="form-group">
@@ -107,8 +107,8 @@
                                 <label for="perito">Perito</label>
                                 <input class="form-control form-control-sm col-6" value="<?php echo $registro['perito'] ?>" type="text" name="perito" placeholder="">
                             </div>
-                            <button type="submit" class="btn btn-success"><i class="far fa-share-square"></i>Salvar</button>
-                            <a href="starter.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
+                            <button type="submit" class="btn btn-outline-primary"><i style="margin-right:10px;" class="far fa-share-square"></i>Salvar</button>
+                            <a href="starter.php"><button type="button" class="btn btn-outline-danger"><i style="margin-right:10px;" class="far fa-times-circle"></i>Cancelar</button></a>
                         </form>                      
                     </div>
                 </div>
