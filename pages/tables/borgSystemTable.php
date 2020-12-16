@@ -1,5 +1,7 @@
           <?php 
-            $queryGetRegistros = "select * from registro";
+            if(isset($_POST['numeroProcesso']))
+              $numeroProcesso = $palavra = $_POST['numeroProcesso'];            
+            $queryGetRegistros = "select * from registro ";
             //$queryGetRegistros = "select * from historico";
             $resultCount = mysqli_query($conn,"select count(*) as total_records from registro");
             $total_records = mysqli_fetch_array($resultCount);
@@ -11,7 +13,7 @@
             $offset = ($page_no - 1) * $total_records_per_page;
             $total_no_of_pages = ceil($total_records / $total_records_per_page);
 
-            $resultGetRegistros = mysqli_query($conn,"select * from registro LIMIT $offset,$total_records_per_page");
+            $resultGetRegistros = mysqli_query($conn,"select * from registro where numeroProcesso like '%$numeroProcesso%' LIMIT $offset,$total_records_per_page");
             //$resultGetHistorico = mysqli_query($conn,$queryGetRegistros); 
             $resultGetHistorico = mysqli_query($conn,"select * from historico");
             
@@ -22,22 +24,21 @@
             
             $second_last = $total_no_of_pages - 1;
           ?>
-          <form class="form-inline" action="telaInclusao.php">
+
+          <form method="POST" class="form-inline" action="#">
             <div class="input-group">
               <span class="input-group-text" id="filtro">Número do Processo</span>
-              <input type="text"  aria-label="numeroProcesso" aria-describedby="filtro">
-              <span class="input-group-text" id="filtro"><i class="fas fa-search"></i></span>
+              <input type="text" name="numeroProcesso" aria-label="numeroProcesso" aria-describedby="filtro">
+              <button type="submit"><i style="margin-right:5px" class="fas fa-search"></i>Buscar</span></button>
               <div style="float:right">
-                <a href="telaInclusao.php">
-                  <button type="submit" style="float:right" class="btn btn-success" >
+                <a href="telaInclusao.php" class="btn btn-success">
                     <i class="far fa-share-square"></i>
                       Incluir Registro
-                  </button>
                 </a>
               </div>
-              
             </div>
           </form>
+
           <table class="table  table-hover table-bordered">
             <thead>
               <tr class="bg-info">
