@@ -1,6 +1,6 @@
           <?php 
             if(isset($_POST['numeroProcesso']))
-              $numeroProcesso = $palavra = $_POST['numeroProcesso'];            
+              $numeroProcesso = $_POST['numeroProcesso'];            
             $queryGetRegistros = "select * from registro ";
             //$queryGetRegistros = "select * from historico";
             $resultCount = mysqli_query($conn,"select count(*) as total_records from registro");
@@ -12,9 +12,20 @@
 
             $offset = ($page_no - 1) * $total_records_per_page;
             $total_no_of_pages = ceil($total_records / $total_records_per_page);
+            
 
-            $resultGetRegistros = mysqli_query($conn,"select * from registro where numeroProcesso like '%$numeroProcesso%' LIMIT $offset,$total_records_per_page");
-            //$resultGetHistorico = mysqli_query($conn,$queryGetRegistros); 
+            //Ternário para filtro
+            $resultGetRegistros = isset($numeroProcesso)?
+            //Query para caso filtro preenchido
+            mysqli_query($conn,"select * from registro where numeroProcesso 
+            like '%$numeroProcesso%' LIMIT $offset,$total_records_per_page"):
+            //Query para caso não for preenchido filtro
+            mysqli_query($conn,"select * from registro LIMIT $offset,
+            $total_records_per_page");
+
+            
+            
+              //$resultGetHistorico = mysqli_query($conn,$queryGetRegistros); 
             $resultGetHistorico = mysqli_query($conn,"select * from historico");
             
 
