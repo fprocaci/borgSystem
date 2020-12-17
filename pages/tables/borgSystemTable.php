@@ -37,15 +37,30 @@
           ?>
 
           <form method="POST" class="form-inline" action="#">
-            <div class="input-group">
-              <span class="input-group-text" id="filtro">Número do Processo</span>
-              <input type="text" name="numeroProcesso" aria-label="numeroProcesso" aria-describedby="filtro">
-              <button type="submit"><i style="margin-right:5px" class="fas fa-search"></i>Buscar</span></button>
+            <div class="input-group mb-2">
+              
+                <div class="input-group-prepend">
+                  <!-- <div class="input-group-text" id="filtro">Pesquisa</div> -->
+                  <select class="custom-select input-group-text" id="inlineFormCustomSelect">
+                    <option class="input-group-text" id="filtro" selected>Filtro...</option>
+                    <option class="input-group-text" id="#">Processo</option>
+                    <option class="input-group-text" id="#">Autor</option>
+                    <option class="input-group-text" id="#">Réu</option>
+                  </select>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroup" name="numeroProcesso" aria-label="numeroProcesso" aria-describedby="filtro" placeholder=". . .">
+
+                
+              
+              <!-- <span class="input-group-text " id="filtro">Número do Processo</span>
+              <input type="text" name="numeroProcesso" aria-label="numeroProcesso" aria-describedby="filtro"> -->
+              <button type="submit" class="btn btn-secondary ml-1"><i style="margin-right:5px" class="fas fa-search"></i>Buscar</span></button>
               <div style="float:right">
-                <a href="telaInclusao.php" class="btn btn-success">
+                <a href="telaInclusao.php" class="btn btn-success ml-2" style="background-color: #ac2bac" role="button" >
                     <i class="far fa-share-square"></i>
-                      Incluir Registro
+                    Novo Registro
                 </a>
+                
               </div>
             </div>
           </form>
