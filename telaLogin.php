@@ -29,7 +29,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Iniciar sessão</p>
 
-      <form action="starter.php" method="POST">
+      <form action="phpclasses/login.php" method="POST">
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="usuario" placeholder="Usuário" required>
           <div class="input-group-append">

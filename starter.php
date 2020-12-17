@@ -3,10 +3,7 @@
 
 <?php 
   session_start();
-  if(isset($_POST['usuario']))
-    $_SESSION['username'] = $_POST['usuario'];
-  else if($_SESSION['username']){}
-  else
+  if(!isset($_SESSION['username']))
     header("location:telaLogin.php");
 ?>
 
@@ -36,11 +33,12 @@
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
+        <!--<div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
+        </div>-->
         <div class="info">
           <a href="#" class="d-block">
+            <i class="far fa-user"></i>
             <?php  
               echo $_SESSION['username'];
             ?>

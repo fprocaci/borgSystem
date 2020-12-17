@@ -13,12 +13,14 @@
             $offset = ($page_no - 1) * $total_records_per_page;
             $total_no_of_pages = ceil($total_records / $total_records_per_page);
             
+            if(isset($_POST['tipoFiltro'])) $tipoFiltro = $_POST['tipoFiltro'];
+            if(isset($_POST['valorFiltro'])) $valorFiltro = $_POST['valorFiltro'];
 
             //Ternário para filtro
-            $resultGetRegistros = isset($numeroProcesso)?
-            //Query para caso filtro preenchido
-            mysqli_query($conn,"select * from registro where numeroProcesso 
-            like '%$numeroProcesso%' LIMIT $offset,$total_records_per_page"):
+            $resultGetRegistros = 
+            ((isset($tipoFiltro) && isset($valorFiltro)))?
+            mysqli_query($conn,"select * from registro where $tipoFiltro 
+            like '%$valorFiltro%' LIMIT $offset,$total_records_per_page"):
             //Query para caso não for preenchido filtro
             mysqli_query($conn,"select * from registro LIMIT $offset,
             $total_records_per_page");
@@ -41,14 +43,15 @@
               
                 <div class="input-group-prepend">
                   <!-- <div class="input-group-text" id="filtro">Pesquisa</div> -->
-                  <select class="custom-select input-group-text" id="inlineFormCustomSelect">
-                    <option class="input-group-text" id="filtro" selected>Filtro...</option>
-                    <option class="input-group-text" id="#">Processo</option>
-                    <option class="input-group-text" id="#">Autor</option>
-                    <option class="input-group-text" id="#">Réu</option>
+                  <select class="custom-select input-group-text" name="tipoFiltro" id="inlineFormCustomSelect">
+              <!--  <option class="input-group-text" id="filtro" selected>Filtro...</option> -->
+                    <option class="input-group-text" value="numeroProcesso" id="#">Processo</option>
+                    <option class="input-group-text" value="autor" id="#">Autor</option>
+                    <option class="input-group-text" value="reu" id="#">Réu</option>
+                    <option class="input-group-text" value="perito" id="#">Colaborador</option>
                   </select>
                 </div>
-                <input type="text" class="form-control" id="inlineFormInputGroup" name="numeroProcesso" aria-label="numeroProcesso" aria-describedby="filtro" placeholder=". . .">
+                <input type="text" class="form-control" id="inlineFormInputGroup" name="valorFiltro" aria-label="numeroProcesso" aria-describedby="filtro" placeholder=". . .">
 
                 
               
