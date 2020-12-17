@@ -28,7 +28,7 @@
                         <h3 class="offset-md-4"><i style="margin-right:10px" class="fas fa-user-plus"></i>Cadastro de Usuário</h3>
                     </div>
                     <div class="card-body">
-                    <form method="POST" class="offset-md-4" action="#">
+                    <form method="POST" class="offset-md-4" action="phpclasses/cadastrarUsuario.php">
                             <div class="form-group">
                                 <label for="usuario">Usuário</label>
                                 <input class="form-control form-control-sm col-6" type="text" name="usuario" placeholder="" required>
@@ -39,7 +39,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="senha">Confirmar Senha</label>
-                                <input class="form-control form-control-sm col-6" type="password" name="senha" placeholder="" required>
+                                <input class="form-control form-control-sm col-6" type="password" name="confirmaSenha" placeholder="" required>
                             </div>
                             
                             <button type="submit" class="btn col-2 btn-outline-success">

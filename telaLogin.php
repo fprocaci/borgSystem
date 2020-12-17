@@ -29,9 +29,9 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Iniciar sessão</p>
 
-      <form action="starter.php" method="post">
+      <form action="starter.php" method="POST">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Usuário" required>
+          <input type="text" class="form-control" name="usuario" placeholder="Usuário" required>
           <div class="input-group-append">
             <div class="input-group-text">
                 <i class="far fa-user"></i>
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Senha" required>
+          <input type="password" class="form-control" name="password" placeholder="Senha" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -47,13 +47,6 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-4">
-            <a href="telaCadastro.php">
-                <button type="button" class="btn btn-outline-primary btn-block">
-                    Cadastrar
-                </button>
-            </a>
-          </div>
           <!-- /.col -->
           <div class="col-4">
             <button type="submit" class="btn btn-outline-success btn-block">
@@ -62,6 +55,14 @@
           </div>
           <!-- /.col -->
         </div>
+
+    <!--<div class="row">
+          <div class="col-8">
+            <a href="telaCadastro.php">
+                Não possui cadastro?
+            </a>
+          </div>
+        </div> -->
       </form>
 
     </div>
