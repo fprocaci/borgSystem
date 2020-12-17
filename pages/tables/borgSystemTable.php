@@ -59,8 +59,8 @@
               <input type="text" name="numeroProcesso" aria-label="numeroProcesso" aria-describedby="filtro"> -->
               <button type="submit" class="btn btn-secondary ml-1"><i style="margin-right:5px" class="fas fa-search"></i>Buscar</span></button>
               <div style="float:right">
-                <a href="telaInclusao.php" class="btn btn-success ml-2" style="background-color: #ac2bac" role="button" >
-                    <i class="far fa-share-square"></i>
+                <a href="telaInclusao.php" class="btn btn-success ml-2" role="button" >
+                    <i class="fas fa-plus-circle"></i>
                     Novo Registro
                 </a>
                 
@@ -109,8 +109,9 @@
               echo "</div>";
               echo "</a></td>";
               echo "<td>".$row["perito"]."</td>";
-              echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-outline-primary col-12' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i>Editar</button></a>";
-              echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm col-12 btn-outline-danger'><i class='far fa-trash-alt'></i>Excluir</button></a>";
+              echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-primary mr-1' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i> Editar</button></a>";
+              echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-danger mr-1'><i class='far fa-trash-alt'></i> Excluir</button></a>";
+              echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-success'><i class='far fa-trash-alt'></i> Modal</button></a>";
               echo"</td>";
               echo "</tr>";
               }
