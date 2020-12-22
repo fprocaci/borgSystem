@@ -1,4 +1,9 @@
           <?php 
+            mysqli_query($conn,"SET NAMES 'utf8'");
+            mysqli_query($conn,'SET character_set_connection=utf8');
+            mysqli_query($conn,'SET character_set_client=utf8');
+            mysqli_query($conn,'SET character_set_results=utf8');
+
             if(isset($_POST['numeroProcesso']))
               $numeroProcesso = $_POST['numeroProcesso'];            
             $queryGetRegistros = "select * from registro ";
@@ -94,20 +99,21 @@
               "<td>R$".substr($row["valor"],0,1).".".substr($row["valor"],1,10)."</td>":
               "<td>R$".$row["valor"]."</td>";
               echo $campoValor;
-              echo "<td>";
-              echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
-              echo " Histórico";
-              echo "<div class='collapse' id='collapseButton'>";
-              echo    "<ul class='list-group list-group-item-action'>";
+              echo "<td>".$row["situacao"]."</td>";
+              //echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
+              //echo " Histórico";
+              //echo "<div class='collapse' id='collapseButton'>";
+              //echo    "<ul class='list-group list-group-item-action'>";
               
-              while($rowHistorico = $resultGetHistorico -> fetch_assoc()){
+              /*while($rowHistorico = $resultGetHistorico -> fetch_assoc()){
                 if($row["numeroProcesso"] == $rowHistorico["numeroProcesso"])
                   echo "<li class='list-group-item'>".$rowHistorico["situacao"]." - ".$rowHistorico["perito"]."</li>";
               }
+              */
 
-              echo "  </ul>";
-              echo "</div>";
-              echo "</a></td>";
+              //echo "  </ul>";
+              //echo "</div>";
+              //echo "</a></td>";
               echo "<td>".$row["perito"]."</td>";
               echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-primary mr-1' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i> Editar</button></a>";
               echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-danger mr-1'><i class='far fa-trash-alt'></i> Excluir</button></a>";

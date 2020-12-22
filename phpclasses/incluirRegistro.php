@@ -1,5 +1,3 @@
-<?php include("header.php")?>
-
 <?php 
     include("conexao.php");
     $numeroProcesso = $_POST['numeroProcesso'];
@@ -10,13 +8,14 @@
     $perito = $_POST['perito'];
 
     $queryInsert = "Insert into registro values ('$numeroProcesso','$autor','$reu','$valor','$situacao','$perito')";
+    mysqli_query($conn,"SET NAMES 'utf8'");
+    mysqli_query($conn,'SET character_set_connection=utf8');
+    mysqli_query($conn,'SET character_set_client=utf8');
+    mysqli_query($conn,'SET character_set_results=utf8');
     $result = mysqli_query($conn,$queryInsert);
 
     if(mysqli_affected_rows($conn) != 0){
-        echo "<script type='text/javascript'>toastr.success('Usuário incluido com sucesso!')</script>";
         header("Location: ../starter.php");   
     }
 
 ?>
-
-<?php include("footer.php")?>
