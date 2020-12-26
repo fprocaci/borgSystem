@@ -56,20 +56,20 @@
                     <option class="input-group-text" value="perito" id="#">Colaborador</option>
                   </select>
                 </div>
-                <input type="text" class="form-control" id="inlineFormInputGroup" name="valorFiltro" aria-label="numeroProcesso" aria-describedby="filtro" placeholder=". . .">
+                <input type="text" class="form-control" id="inlineFormInputGroup" name="valorFiltro" aria-label="numeroProcesso" aria-describedby="filtro" autocomplete="off" placeholder=". . .">
 
                 
               
               <!-- <span class="input-group-text " id="filtro">Número do Processo</span>
               <input type="text" name="numeroProcesso" aria-label="numeroProcesso" aria-describedby="filtro"> -->
               <button type="submit" class="btn btn-secondary ml-1"><i style="margin-right:5px" class="fas fa-search"></i>Buscar</span></button>
-              <div style="float:right">
+              <!--<div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <a href="telaInclusao.php" class="btn btn-success ml-2" role="button" >
                     <i class="fas fa-plus-circle"></i>
                     Novo Registro
                 </a>
                 
-              </div>
+              </div> -->
             </div>
           </form>
 
@@ -117,7 +117,7 @@
               echo "<td>".$row["perito"]."</td>";
               echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-primary mr-1' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i> Editar</button></a>";
               echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-danger mr-1'><i class='far fa-trash-alt'></i> Excluir</button></a>";
-              echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-success'><i class='far fa-trash-alt'></i> Modal</button></a>";
+              //echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-success'><i class='far fa-trash-alt'></i> Modal</button></a>";
               echo"</td>";
               echo "</tr>";
               }

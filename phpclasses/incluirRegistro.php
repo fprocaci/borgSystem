@@ -6,8 +6,9 @@
     $valor = $_POST['valor'];
     $situacao = $_POST['situacao'];
     $perito = $_POST['perito'];
+    $flagCusto = $_POST['flagCusto'];
 
-    $queryInsert = "Insert into registro values ('$numeroProcesso','$autor','$reu','$valor','$situacao','$perito')";
+    $queryInsert = "Insert into registro values ('$numeroProcesso','$autor','$reu','$valor','$situacao','$perito','$flagCusto')";
     mysqli_query($conn,"SET NAMES 'utf8'");
     mysqli_query($conn,'SET character_set_connection=utf8');
     mysqli_query($conn,'SET character_set_client=utf8');
@@ -17,5 +18,4 @@
     if(mysqli_affected_rows($conn) != 0){
         header("Location: ../starter.php");   
     }
-
 ?>

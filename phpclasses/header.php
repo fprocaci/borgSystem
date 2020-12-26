@@ -14,6 +14,10 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- Bootstrap 5 --> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
   <!-- iCheck -->
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
@@ -66,20 +70,31 @@
       </div>-->
       <div class="info">
         <a href="#" class="d-block">
-          <i class="far fa-user"></i>
+          <i class="far fa-user" style="margin-right:10px"></i>
           <?php  
             echo $_SESSION['username'];
           ?>
         </a>
       </div>
+        
     </div>
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <!-- Add icons to the links using the .nav-icon class
-             with font-awesome or any other icon font library -->
-        
+        <a class="btn btn-outline-secondary text-white text-left" style="margin-bottom:10px" href="welcome.php">
+          <i class="fas fa-home" style="margin-right:10px"></i>Inicio
+        </a>
+        <a class="btn btn-outline-secondary text-white text-left" style="margin-bottom:10px" href="starter.php">
+          <i class="fas fa-search" style="margin-right:10px"></i>Tela de Consulta
+        </a>
+        <a class="btn btn-outline-secondary text-white text-left" style="margin-bottom:10px" href="telaInclusao.php">
+          <i class="fas fa-plus-circle" style="margin-right:10px"></i>Tela de Inclusão
+        </a>
+        <a class="btn btn-danger text-white btn-outline-secondary text-left" href="phpclasses/logout.php">
+          <i class="fas fa-sign-out-alt" style="margin-right:10px"></i>Sair
+        </a>
+
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

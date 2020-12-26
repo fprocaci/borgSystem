@@ -54,6 +54,22 @@
                                 <label for="perito">Perito</label>
                                 <input class="form-control form-control-sm col-6" type="text" name="perito" placeholder="">
                             </div>
+  
+                            <div class="form-group">
+                              <div class="row">
+                                <label for="option1">Ajuda de Custo</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="flagCusto" id="inlineRadio1" value="S">
+                                <label class="form-check-label" for="inlineRadio1">Sim</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="flagCusto" id="inlineRadio2" value="N">
+                                <label class="form-check-label" for="inlineRadio2">Não</label>
+                              </div>
+                            </div>
+                              
+                            
                             <button type="submit" class="btn btn-outline-primary">
                               <i class="fas fa-plus" style="margin-right:10px;"></i>
                               Incluir

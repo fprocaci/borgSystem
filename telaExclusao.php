@@ -66,6 +66,19 @@
                                 <label for="perito">Perito</label>
                                 <input class="form-control form-control-sm col-6" value="<?php echo $registro['perito'] ?>" type="text" name="perito" placeholder="" disabled>
                             </div>
+                            <div class="form-group">
+                              <div class="row">
+                                <label for="option1">Ajuda de Custo</label>
+                              </div>
+                              <input type="radio" class="btn-check" name="flagCusto" id="option1" 
+                              autocomplete="off" value="S" <?php if($registro["flagCusto"] == "S")
+                              {echo "checked";}?> disabled>
+                              <label class="btn btn-outline-primary" for="option1">Sim</label>
+                              <input type="radio" class="btn-check" name="flagCusto" id="option1" 
+                              autocomplete="off" value="N" <?php if($registro["flagCusto"] == "N")
+                              {echo "checked";}?> disabled>
+                              <label class="btn btn-outline-primary" for="option1">Não</label>
+                            </div>
                             <a href="phpclasses/excluirRegistro.php?id='<?php echo $registro["numeroProcesso"]?>'">
                               <button type="button" class="btn btn-outline-primary">
                                 <i class="fas fa-trash-alt" style="margin-right:10px;"></i>

@@ -6,11 +6,12 @@
     $valor = $_POST['valor'];
     $situacao = $_POST['situacao'];
     $perito = $_POST['perito'];
+    $flagCusto = $_POST['flagCusto'];
 
     $queryInsertSituacao = "insert into historico values ('$numeroProcesso','$situacao','$perito')";
 
     $queryInsert = "update registro set autor = '$autor', reu = '$reu', valor= '$valor', situacao = '$situacao'
-    ,perito = '$perito' where numeroProcesso = '$numeroProcesso'";
+    ,perito = '$perito',flagCusto = '$flagCusto' where numeroProcesso = '$numeroProcesso'";
     mysqli_query($conn,"SET NAMES 'utf8'");
     mysqli_query($conn,'SET character_set_connection=utf8');
     mysqli_query($conn,'SET character_set_client=utf8');
