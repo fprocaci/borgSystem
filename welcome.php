@@ -27,8 +27,12 @@
       <div class="container-fluid">
         <div class="row">
         <?php 
-          $sql = "SELECT * FROM REGISTRO";
-          $result = mysqli_query($conn, $sql);
+          mysqli_query($conn,"SET NAMES 'utf8'");
+          mysqli_query($conn,'SET character_set_connection=utf8');
+          mysqli_query($conn,'SET character_set_client=utf8');
+          mysqli_query($conn,'SET character_set_results=utf8');
+          $sql = "select * from registro order by dhinclusao asc";
+          $result = mysqli_query($conn, $sql) or die (mysqli_error($conn));;
 
           while($row = mysqli_fetch_assoc($result)) {
         ?>
@@ -38,8 +42,11 @@
               <!-- Número do Processo | header --> 
               <div class="card-header bg-info text-white">
                 <strong>Numero do Processo : </strong>
-                <?php echo $row['numeroProcesso']; ?>
-                <span class="badge bg-danger">Novo</span>
+                <?php echo $row['numeroProcesso']; 
+                
+                if($row['dhinclusao'] == date("Y-m-d")) {?>
+                  <span class="badge bg-danger">Novo</span>
+                <?php } ?>
               </div>
               <div class="card-body">
                 <!-- Autor -->

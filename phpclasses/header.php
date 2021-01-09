@@ -69,7 +69,7 @@
         <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>-->
       <div class="info">
-        <a href="#" class="d-block">
+        <a href="#" class="text-white d-block">
           <i class="far fa-user" style="margin-right:10px"></i>
           <?php  
             echo $_SESSION['username'];
@@ -91,6 +91,26 @@
         <a class="btn btn-outline-secondary text-white text-left" style="margin-bottom:10px" href="telaInclusao.php">
           <i class="fas fa-plus-circle" style="margin-right:10px"></i>Tela de Inclusão
         </a>
+        <a style="margin-bottom:10px" href="telaRelatorio.php">
+          <button class="col-12 btn btn-outline-secondary text-white text-left">
+            <i class="fas fa-chart-line" style="margin-right:10px"></i>
+            Relatório
+          </button>
+        </a>
+        <a style="margin-bottom:10px" href="telaHistoricoHonorario.php">
+          <button class="col-12 btn btn-outline-secondary text-white text-left">
+            <i class="far fa-file-alt" style="margin-right:10px"></i>
+            Histórico
+          </button>
+        </a>
+
+        <!-- <a style="margin-bottom:10px" href="#">
+          <button class="col-12 btn btn-outline-secondary text-white text-left" disabled>
+            <i class="fas fa-plus-circle" style="margin-right:10px"></i>
+            Gerador DOC
+            <span class="badge bg-danger">Em breve</span>
+          </button>
+        </a> -->
         <a class="btn btn-danger text-white btn-outline-secondary text-left" href="phpclasses/logout.php">
           <i class="fas fa-sign-out-alt" style="margin-right:10px"></i>Sair
         </a>

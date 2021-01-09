@@ -25,7 +25,7 @@
     <!-- Main content -->
     <?php 
         $numeroProcesso = $_REQUEST['id'];
-        $query = "select * from registro where numeroProcesso = '$numeroProcesso'";
+        $query = "select * from controle_de_honorarios_csv where numeroProcesso = '$numeroProcesso'";
         mysqli_query($conn,"SET NAMES 'utf8'");
         mysqli_query($conn,'SET character_set_connection=utf8');
         mysqli_query($conn,'SET character_set_client=utf8');
@@ -43,27 +43,33 @@
                         <form method="POST" class="offset-md-4" action="phpclasses/alterarRegistro.php">
                             <div class="form-group">
                                 <label for="numeroProcesso" hidden>Número do Processo</label>
-                                <input class="form-control form-control-sm  col-6" value="<?php echo $registro['numeroProcesso'] ?>" type="text" name="numeroProcesso" placeholder="" required hidden>
+                                <input class="form-control form-control-sm  col-6" value="<?php echo $registro['numeroProcesso'] ?>" 
+                                type="text" name="numeroProcesso" placeholder="" required hidden autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="autor">Autor</label>
-                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['autor'] ?>" type="text" name="autor" placeholder="" required>
+                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['autor'] ?>" 
+                                type="text" name="autor" placeholder="" required autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="reu">Réu</label>
-                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['reu'] ?>" type="text" name="reu" placeholder="" required>
+                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['reu'] ?>"
+                                 type="text" name="reu" placeholder="" required autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="valor">Valor</label>
-                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['valor'] ?>" type="text" name="valor" placeholder="" required>
+                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['valor'] ?>"
+                                 type="text" name="valor" placeholder="" required autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="situacao">Situação</label>
-                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['situacao'] ?>" type="text" name="situacao" placeholder="">
+                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['situacao'] ?>"
+                                 type="text" name="situacao" placeholder="" autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="perito">Perito</label>
-                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['perito'] ?>" type="text" name="perito" placeholder="">
+                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['perito'] ?>" 
+                                type="text" name="perito" placeholder="" autocomplete="off">
                             </div>
                             <div class="form-group">
                               <div class="row">

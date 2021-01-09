@@ -7,8 +7,9 @@
     $situacao = $_POST['situacao'];
     $perito = $_POST['perito'];
     $flagCusto = $_POST['flagCusto'];
+    //$dhInclusao = date("Y-m-d");
 
-    $queryInsert = "Insert into registro values ('$numeroProcesso','$autor','$reu','$valor','$situacao','$perito','$flagCusto')";
+    $queryInsert = "Insert into controle_de_honorarios_csv (numeroProcesso,autor,reu,valor,situacao,perito,flagCusto) values ('$numeroProcesso','$autor','$reu','$valor','$situacao','$perito','$flagCusto')";
     mysqli_query($conn,"SET NAMES 'utf8'");
     mysqli_query($conn,'SET character_set_connection=utf8');
     mysqli_query($conn,'SET character_set_client=utf8');

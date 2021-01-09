@@ -10,7 +10,7 @@
 
     $queryInsertSituacao = "insert into historico values ('$numeroProcesso','$situacao','$perito')";
 
-    $queryInsert = "update registro set autor = '$autor', reu = '$reu', valor= '$valor', situacao = '$situacao'
+    $queryInsert = "update controle_de_honorarios_csv set autor = '$autor', reu = '$reu', valor= '$valor', situacao = '$situacao'
     ,perito = '$perito',flagCusto = '$flagCusto' where numeroProcesso = '$numeroProcesso'";
     mysqli_query($conn,"SET NAMES 'utf8'");
     mysqli_query($conn,'SET character_set_connection=utf8');

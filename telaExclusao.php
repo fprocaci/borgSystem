@@ -26,7 +26,7 @@
     <!-- Main content -->
     <?php 
         $numeroProcesso = $_REQUEST['id'];
-        $query = "select * from registro where numeroProcesso = '$numeroProcesso'";
+        $query = "select * from controle_de_honorarios_csv where numeroProcesso = '$numeroProcesso'";
         mysqli_query($conn,"SET NAMES 'utf8'");
         mysqli_query($conn,'SET character_set_connection=utf8');
         mysqli_query($conn,'SET character_set_client=utf8');
@@ -70,14 +70,16 @@
                               <div class="row">
                                 <label for="option1">Ajuda de Custo</label>
                               </div>
-                              <input type="radio" class="btn-check" name="flagCusto" id="option1" 
-                              autocomplete="off" value="S" <?php if($registro["flagCusto"] == "S")
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="flagCusto" id="inlineRadio1" value="S" <?php if($registro["flagCusto"] == "S")
                               {echo "checked";}?> disabled>
-                              <label class="btn btn-outline-primary" for="option1">Sim</label>
-                              <input type="radio" class="btn-check" name="flagCusto" id="option1" 
-                              autocomplete="off" value="N" <?php if($registro["flagCusto"] == "N")
+                                <label class="form-check-label" for="inlineRadio1">Sim</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="flagCusto" id="inlineRadio2" value="N" <?php if($registro["flagCusto"] == "N")
                               {echo "checked";}?> disabled>
-                              <label class="btn btn-outline-primary" for="option1">Não</label>
+                                <label class="form-check-label" for="inlineRadio2">Não</label>
+                              </div>
                             </div>
                             <a href="phpclasses/excluirRegistro.php?id='<?php echo $registro["numeroProcesso"]?>'">
                               <button type="button" class="btn btn-outline-primary">
