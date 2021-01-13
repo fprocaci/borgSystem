@@ -16,7 +16,10 @@
         header("Location:../telaLogin.php");
     }else{
         $_SESSION["username"] = $usuario;
-        header("Location:../welcome.php");
+        if(($usuario == "Matheus") || ($usuario == "Procaci"))
+            header("Location:../welcome.php");
+        else 
+            header("Location:../starter.php");
     }
     
 
