@@ -1,9 +1,14 @@
           <?php 
+            mysqli_query($conn,"SET NAMES 'utf8'");
+            mysqli_query($conn,'SET character_set_connection=utf8');
+            mysqli_query($conn,'SET character_set_client=utf8');
+            mysqli_query($conn,'SET character_set_results=utf8');
+
             if(isset($_POST['numeroProcesso']))
               $numeroProcesso = $_POST['numeroProcesso'];            
-            $queryGetRegistros = "select * from registro ";
+            $queryGetRegistros = "select * from controle_de_honorarios_csv ";
             //$queryGetRegistros = "select * from historico";
-            $resultCount = mysqli_query($conn,"select count(*) as total_records from registro");
+            $resultCount = mysqli_query($conn,"select count(*) as total_records from controle_de_honorarios_csv");
             $total_records = mysqli_fetch_array($resultCount);
             $total_records_per_page = 10;
             $total_records = $total_records['total_records'];
@@ -19,10 +24,10 @@
             //Ternário para filtro
             $resultGetRegistros = 
             ((isset($tipoFiltro) && isset($valorFiltro)))?
-            mysqli_query($conn,"select * from registro where $tipoFiltro 
+            mysqli_query($conn,"select * from controle_de_honorarios_csv where $tipoFiltro 
             like '%$valorFiltro%' LIMIT $offset,$total_records_per_page"):
             //Query para caso não for preenchido filtro
-            mysqli_query($conn,"select * from registro LIMIT $offset,
+            mysqli_query($conn,"select * from controle_de_honorarios_csv LIMIT $offset,
             $total_records_per_page");
 
             
@@ -51,20 +56,20 @@
                     <option class="input-group-text" value="perito" id="#">Colaborador</option>
                   </select>
                 </div>
-                <input type="text" class="form-control" id="inlineFormInputGroup" name="valorFiltro" aria-label="numeroProcesso" aria-describedby="filtro" placeholder=". . .">
+                <input type="text" class="form-control" id="inlineFormInputGroup" name="valorFiltro" aria-label="numeroProcesso" aria-describedby="filtro" autocomplete="off" placeholder=". . .">
 
                 
               
               <!-- <span class="input-group-text " id="filtro">Número do Processo</span>
               <input type="text" name="numeroProcesso" aria-label="numeroProcesso" aria-describedby="filtro"> -->
               <button type="submit" class="btn btn-secondary ml-1"><i style="margin-right:5px" class="fas fa-search"></i>Buscar</span></button>
-              <div style="float:right">
+              <!--<div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <a href="telaInclusao.php" class="btn btn-success ml-2" role="button" >
                     <i class="fas fa-plus-circle"></i>
                     Novo Registro
                 </a>
                 
-              </div>
+              </div> -->
             </div>
           </form>
 
@@ -94,24 +99,25 @@
               "<td>R$".substr($row["valor"],0,1).".".substr($row["valor"],1,10)."</td>":
               "<td>R$".$row["valor"]."</td>";
               echo $campoValor;
-              echo "<td>";
-              echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
-              echo " Histórico";
-              echo "<div class='collapse' id='collapseButton'>";
-              echo    "<ul class='list-group list-group-item-action'>";
+              echo "<td>".$row["situacao"]."</td>";
+              //echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
+              //echo " Histórico";
+              //echo "<div class='collapse' id='collapseButton'>";
+              //echo    "<ul class='list-group list-group-item-action'>";
               
-              while($rowHistorico = $resultGetHistorico -> fetch_assoc()){
+              /*while($rowHistorico = $resultGetHistorico -> fetch_assoc()){
                 if($row["numeroProcesso"] == $rowHistorico["numeroProcesso"])
                   echo "<li class='list-group-item'>".$rowHistorico["situacao"]." - ".$rowHistorico["perito"]."</li>";
               }
+              */
 
-              echo "  </ul>";
-              echo "</div>";
-              echo "</a></td>";
+              //echo "  </ul>";
+              //echo "</div>";
+              //echo "</a></td>";
               echo "<td>".$row["perito"]."</td>";
               echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-primary mr-1' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i> Editar</button></a>";
               echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-danger mr-1'><i class='far fa-trash-alt'></i> Excluir</button></a>";
-              echo "<a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-success'><i class='far fa-trash-alt'></i> Modal</button></a>";
+              //echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-success'><i class='far fa-trash-alt'></i> Modal</button></a>";
               echo"</td>";
               echo "</tr>";
               }

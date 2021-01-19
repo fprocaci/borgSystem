@@ -9,16 +9,17 @@
 
     $usuario = $_POST["usuario"];
     $senha = MD5($_POST["password"]);
-    echo $senha;
 
     $verifica = mysqli_query($conn,"SELECT * FROM usuarios WHERE login =
     '$usuario' AND senha = '$senha'") or die("erro ao selecionar");
     if (mysqli_num_rows($verifica)<=0){
         header("Location:../telaLogin.php");
     }else{
-        session_start();
         $_SESSION["username"] = $usuario;
-        header("Location:../starter.php");
+        if(($usuario == "Matheus") || ($usuario == "Procaci"))
+            header("Location:../welcome.php");
+        else 
+            header("Location:../starter.php");
     }
     
 
