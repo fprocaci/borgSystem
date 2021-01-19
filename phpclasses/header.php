@@ -107,6 +107,12 @@
               Histórico
             </button>
           </a>
+          <a style="margin-bottom:10px" href="telaHistoricoStatus.php">
+            <button class="col-12 btn btn-outline-secondary text-white text-left">
+              <i class="far fa-file-alt" style="margin-right:10px"></i>
+              Histórico Status
+            </button>
+          </a>
         <?php } ?>
         <!-- <a style="margin-bottom:10px" href="#">
           <button class="col-12 btn btn-outline-secondary text-white text-left" disabled>

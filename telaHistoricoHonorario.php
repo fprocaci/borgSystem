@@ -3,14 +3,13 @@
 <div class="content-wrapper">
   <div class="content-header">
     <div class="container-fluid">
-      <div class="row mb-2">
+      <div class="row">
         <div class="col-12">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item text-info active" aria-current="page"><strong>Histórico Honorários</strong></li>
               </ol>
             </nav>
-            <hr>
         </div>
       </div>
     </div>
