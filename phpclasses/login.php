@@ -11,13 +11,13 @@
     $senha = MD5($_POST["password"]);
 
     $verifica = mysqli_query($conn,"SELECT * FROM usuarios WHERE login =
-    '$usuario' AND senha = '$senha'") or die("erro ao selecionar");
+    '$usuario' AND senha = '$senha'") or die("Ocorreu um erro ao tentar achar a tabela na base de dados");
     if (mysqli_num_rows($verifica)<=0){
         header("Location:../telaLogin.php");
     }else{
         $_SESSION["username"] = $usuario;
         if(($usuario == "Matheus") || ($usuario == "Procaci"))
-            header("Location:../welcome.php");
+            header("Location:../starter.php");
         else 
             header("Location:../starter.php");
     }

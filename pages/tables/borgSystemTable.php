@@ -78,7 +78,7 @@
               <tr class="bg-info">
               <!--  <th scope="col">#</th> -->
                 <th scope="col">Numero do Processo</th>
-                <th scope="col">Autor</th>
+              <!--  <th scope="col">Autor</th> -->
                 <th scope="col">Réu</th>
                 <th scope="col">Valor</th>
                 <th scope="col">Situação</th>
@@ -92,15 +92,18 @@
               echo "<tr>";
          /*     echo "<th scope='row'>".$row["indice"]."</th>"; */
               echo "<td scope='row'>".$row["numeroProcesso"]."</td>";
-              echo "<td>".$row["autor"]."</td>";
+         //     echo "<td>".$row["autor"]."</td>";
               echo "<td>".$row["reu"]."</td>";
               $campoValor;
               $campoValor = (strlen($row["valor"]) > 3)?
               "<td>R$".substr($row["valor"],0,1).".".substr($row["valor"],1,10)."</td>":
               "<td>R$".$row["valor"]."</td>";
               echo $campoValor;
-              echo "<td>".$row["situacao"]."</td>";
-              //echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
+              if($row["situacao"] <> "")
+                echo '<td>'.$row["situacao"].'<br><br><a href="telaHistoricoStatus.php?id='.$row["numeroProcesso"].'"><button type="button" class="btn btn-outline-primary rounded-pill">Ver mais</button></td></a>';
+              else 
+                echo '<td>'.$row["situacao"].'</td>';
+                //echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
               //echo " Histórico";
               //echo "<div class='collapse' id='collapseButton'>";
               //echo    "<ul class='list-group list-group-item-action'>";

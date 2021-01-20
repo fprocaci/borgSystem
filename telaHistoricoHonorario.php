@@ -91,7 +91,7 @@
       <tr class="bg-info">
       <!--  <th scope="col">#</th> -->
         <th scope="col">Numero do Processo</th>
-        <th scope="col">Autor</th>
+      <!--  <th scope="col">Autor</th> -->
         <th scope="col">Réu</th>
         <th scope="col">Valor</th>
         <th scope="col">Situação</th>
@@ -105,7 +105,7 @@
       echo "<tr>";
       /*     echo "<th scope='row'>".$row["indice"]."</th>"; */
       echo "<td scope='row'>".$row["numeroProcesso"]."</td>";
-      echo "<td>".$row["autor"]."</td>";
+      //echo "<td>".$row["autor"]."</td>";
       echo "<td>".$row["reu"]."</td>";
       $campoValor;
       $campoValor = (strlen($row["valor"]) > 3)?
@@ -185,6 +185,6 @@
     ?>
   </ul>
 </div>
-
+</div>
 
 <?php include("phpclasses/footer.php")?>

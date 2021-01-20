@@ -85,7 +85,7 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <a class="btn btn-outline-secondary text-white text-left" style="margin-bottom:10px" href="welcome.php">
+        <a class="btn btn-outline-secondary text-white text-left" style="margin-bottom:10px" href="starter.php">
           <i class="fas fa-home" style="margin-right:10px"></i>Inicio
         </a>
         <a class="btn btn-outline-secondary text-white text-left" style="margin-bottom:10px" href="starter.php">
@@ -94,7 +94,7 @@
         <a class="btn btn-outline-secondary text-white text-left" style="margin-bottom:10px" href="telaInclusao.php">
           <i class="fas fa-plus-circle" style="margin-right:10px"></i>Tela de Inclusão
         </a>
-        <?php if(isset($_SESSION['username']) && (($_SESSION['username'] == "Matheus") || ($_SESSION['username'] == "Procaci"))){?>
+        <?php //if(isset($_SESSION['username']) && (($_SESSION['username'] == "Matheus") || ($_SESSION['username'] == "Procaci"))){?>
           <a style="margin-bottom:10px" href="telaRelatorio.php">
             <button class="col-12 btn btn-outline-secondary text-white text-left">
               <i class="fas fa-chart-line" style="margin-right:10px"></i>
@@ -107,13 +107,13 @@
               Histórico
             </button>
           </a>
-          <a style="margin-bottom:10px" href="telaHistoricoStatus.php">
+          <!--<a style="margin-bottom:10px" href="telaHistoricoStatus.php">
             <button class="col-12 btn btn-outline-secondary text-white text-left">
               <i class="far fa-file-alt" style="margin-right:10px"></i>
               Histórico Status
             </button>
-          </a>
-        <?php } ?>
+          </a>-->
+        <?php //} ?>
         <!-- <a style="margin-bottom:10px" href="#">
           <button class="col-12 btn btn-outline-secondary text-white text-left" disabled>
             <i class="fas fa-plus-circle" style="margin-right:10px"></i>

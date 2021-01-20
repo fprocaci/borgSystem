@@ -1,14 +1,6 @@
 <?php include("phpclasses/conexao.php")?>
 <?php 
     include("phpclasses/header.php");
-    $queryProcessos = 'SELECT distinct(numeroProcesso) FROM controle_de_honorarios_csv';
-    $listProcessos = mysqli_query($conn, $queryProcessos);
-    
-    if(isset($_POST["numeroProcesso"])){
-        $numeroProcesso = $_POST["numeroProcesso"];
-        $queryStatus = "SELECT * FROM historico where numeroProcesso = '$numeroProcesso'";
-        $listStatus = mysqli_query($conn, $queryStatus);
-    }
 ?>
 <div class="content-wrapper">
   <div class="content-header">
