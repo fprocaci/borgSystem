@@ -83,6 +83,7 @@
                 <th scope="col">Valor</th>
                 <th scope="col">Situação</th>
                 <th scope="col">Colaborador</th>
+                <th scope="col">Ajuda de Custo?</th>
                 <th scope="col">Ação</th>
               </tr>
             </thead>
@@ -100,7 +101,7 @@
               "<td>R$".$row["valor"]."</td>";
               echo $campoValor;
               if($row["situacao"] <> "")
-                echo '<td>'.$row["situacao"].'<br><br><a href="telaHistoricoStatus.php?id='.$row["numeroProcesso"].'"><button type="button" class="btn btn-outline-primary rounded-pill">Ver mais</button></td></a>';
+                echo '<td>'.$row["situacao"].'<br><br><a href="telaHistoricoStatus.php?id='.$row["numeroProcesso"].'"><button type="button" class="btn btn-outline-primary">Historico</button></td></a>';
               else 
                 echo '<td>'.$row["situacao"].'</td>';
                 //echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
@@ -118,6 +119,16 @@
               //echo "</div>";
               //echo "</a></td>";
               echo "<td>".$row["perito"]."</td>";
+              echo '<td>
+                      <div class="btn-group" role="group" aria-label="Basic outlined example">
+                        <a href="phpclasses/encerraHonorario.php?id='.$row["numeroProcesso"].'&&id2=500">
+                          <button type="button" class="btn btn-outline-primary">Sim</button>
+                        </a>
+                        <a href="phpclasses/encerraHonorario.php?id='.$row["numeroProcesso"].'&&id2='.$row["valor"].'">
+                          <button type="button" class="btn btn-outline-primary">Não</button>
+                        </a>
+                      </div>
+                    </td>';
               echo "<td><a href='telaAlteracao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-primary mr-1' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i> Editar</button></a>";
               echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-danger mr-1'><i class='far fa-trash-alt'></i> Excluir</button></a>";
               //echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-success'><i class='far fa-trash-alt'></i> Modal</button></a>";
