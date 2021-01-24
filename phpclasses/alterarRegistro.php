@@ -3,7 +3,7 @@
     $numeroProcesso = $_POST['numeroProcesso'];
     $autor = $_POST['autor'];
     $reu = $_POST['reu'];
-    $valor = $_POST['valor'];
+    $valor = $_POST['valor'] * 1100;
     $situacao = $_POST['situacao'];
     $perito = $_POST['perito'];
     $flagCusto = $_POST['flagCusto'];

@@ -62,7 +62,7 @@
 
                             <!-- Datalist Réu --> 
                             <label for="exampleDataList" class="form-label">Réu</label>
-                            <input class="form-control mb-3 col-6" list="datalistOptions" name="reu" id="exampleDataList">
+                            <input class="form-control mb-3 col-6" list="datalistOptions" autocomplete="off" name="reu" id="exampleDataList">
                             <datalist id="datalistOptions">
                               <?php 
                                 while($row = $arrayObj -> fetch_assoc()) {
@@ -70,11 +70,11 @@
                                 }
                               ?>
                             </datalist>
-
-                            <div class="form-group">
-                                <label for="valor" class="form-label">Valor</label>
-                                <input class="form-control form-control-sm col-6" type="text" name="valor"
-                                autocomplete="off" required>
+                            <label for="valor">Valor</label>
+                            <div class="input-group mb-3">
+                                <span for="valor" class="input-group-text">Salarios Minimos</span>
+                                <input class="form-control col-2"
+                                 type="number" name="valor" placeholder="" required autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="situacao" class="form-label">Situação</label>
