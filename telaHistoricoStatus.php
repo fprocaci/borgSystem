@@ -16,8 +16,9 @@
       </div>
     </div>
 </div>
-<div class="container-fluid">
-    <form class="col-12 form-inline mb-3" method="POST" action="<?php $_PHP_SELF ?>">
+  <div class="container-fluid">
+  <!--
+      <form class="col-12 form-inline mb-3" method="POST" action="<?php $_PHP_SELF ?>">
             <div class="row">
                 <div class="col">
                     <div class="input-group">
@@ -37,6 +38,7 @@
                 </div>
             </div>
     </form>
+    -->
 
     <?php include("pages/tables/tableHistoricoStatus.php");?>
     

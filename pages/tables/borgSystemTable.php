@@ -101,7 +101,11 @@
               "<td>R$".$row["valor"]."</td>";
               echo $campoValor;
               if($row["situacao"] <> "")
-                echo '<td>'.$row["situacao"].'<br><br><a href="telaHistoricoStatus.php?id='.$row["numeroProcesso"].'"><button type="button" class="btn btn-outline-primary">Historico</button></td></a>';
+                echo '<td>'.$row["situacao"].'<br><br>
+                  <a href="telaHistoricoStatus.php?id='.$row["numeroProcesso"].'">
+                    <button type="button" class="btn btn-primary">Historico</button>
+                  </td>
+                </a>';
               else 
                 echo '<td>'.$row["situacao"].'</td>';
                 //echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
@@ -122,10 +126,10 @@
               echo '<td>
                       <div class="btn-group" role="group" aria-label="Basic outlined example">
                         <a href="phpclasses/encerraHonorario.php?id='.$row["numeroProcesso"].'&&id2=500">
-                          <button type="button" class="btn btn-outline-primary">Sim</button>
+                          <button type="button" class="btn btn-primary">Sim</button>
                         </a>
                         <a href="phpclasses/encerraHonorario.php?id='.$row["numeroProcesso"].'&&id2='.$row["valor"].'">
-                          <button type="button" class="btn btn-outline-primary">Não</button>
+                          <button type="button" class="btn btn-danger">Não</button>
                         </a>
                       </div>
                     </td>';

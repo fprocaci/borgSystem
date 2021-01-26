@@ -32,5 +32,9 @@
         </table>
     </div>
 
-    <a href="starter.php"><button type="button" class="btn btn-outline-secondary rounded-pill">Voltar</button></a>
+    <a href="starter.php">
+        <button type="button" class="btn btn-outline-primary">
+            Voltar
+        </button>
+    </a>
 

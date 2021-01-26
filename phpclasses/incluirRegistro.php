@@ -18,6 +18,6 @@
     $result = mysqli_query($conn,$queryInsertSituacao);
 
     if(mysqli_affected_rows($conn) != 0){
-        header("Location: ../starter.php");   
+        echo '<script type="text/javascript">alert("Processo incluido com sucesso");window.location.href= "../starter.php"</script>'; 
     }
 ?>

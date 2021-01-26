@@ -26,7 +26,7 @@
 
 
     if(mysqli_query($conn,$queryDelete)){
-        header("Location: ../starter.php");
+        echo '<script type="text/javascript">alert("Processo excluido com sucesso");window.location.href= "../starter.php"</script>';
     }
     else {
         echo "Error: Erro ao executar a query" . mysqli_error($conn);

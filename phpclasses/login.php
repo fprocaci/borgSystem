@@ -17,9 +17,9 @@
     }else{
         $_SESSION["username"] = $usuario;
         if(($usuario == "Matheus") || ($usuario == "Procaci"))
-            header("Location:../starter.php");
+            echo '<script type="text/javascript">alert("Bem vindo(a)!");window.location.href= "../starter.php"</script>';
         else 
-            header("Location:../starter.php");
+            echo '<script type="text/javascript">alert("Bem vindo(a)!");window.location.href= "../starter.php"</script>';
     }
     
 
