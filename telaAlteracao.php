@@ -97,25 +97,25 @@
                                  type="text" name="situacao" placeholder="" autocomplete="off">
                             </div>
                             <div class="form-group">
-                                <label for="perito">Perito</label>
+                                <label for="perito">Colaborador</label>
                                 <input class="form-control form-control-sm col-6" value="<?php echo $registro['perito'] ?>" 
                                 type="text" name="perito" placeholder="" autocomplete="off">
                             </div>
-                            <div class="form-group">
+                            <!--div class="form-group">
                               <div class="row">
                                 <label for="option1">Ajuda de Custo</label>
                               </div>
                               <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="flagCusto" id="inlineRadio1" value="S" <?php if($registro["flagCusto"] == "S")
-                              {echo "checked";}?>>
+                                <input class="form-check-input" type="radio" name="flagCusto" id="inlineRadio1" value="S" <?php /*if($registro["flagCusto"] == "S")
+                              {echo "checked";}*/ ?>>
                                 <label class="form-check-label" for="inlineRadio1">Sim</label>
                               </div>
                               <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="flagCusto" id="inlineRadio2" value="N" <?php if($registro["flagCusto"] == "N")
-                              {echo "checked";}?>>
+                                <input class="form-check-input" type="radio" name="flagCusto" id="inlineRadio2" value="N" <?php /* if($registro["flagCusto"] == "N")
+                              {echo "checked";}*/ ?>>
                                 <label class="form-check-label" for="inlineRadio2">Não</label>
                               </div>
-                            </div>
+                            </div>-->
                             <button type="submit" class="btn btn-outline-primary"><i style="margin-right:10px;" class="far fa-share-square"></i>Salvar</button>
                             <a href="starter.php"><button type="button" class="btn btn-outline-danger"><i style="margin-right:10px;" class="far fa-times-circle"></i>Cancelar</button></a>
                         </form>                      

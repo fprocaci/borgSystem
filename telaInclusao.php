@@ -82,11 +82,12 @@
                                 autocomplete="off" required>
                             </div>
                             <div class="form-group">
-                                <label for="perito" class="form-label">Perito</label>
+                                <label for="perito" class="form-label">Colaborador</label>
                                 <input class="form-control form-control-sm col-6" type="text" name="perito" 
                                 autocomplete="off">
                             </div>
   
+                            <!--
                             <div class="form-group">
                               <div class="row">
                                 <label for="option1">Ajuda de Custo</label>
@@ -99,7 +100,8 @@
                                 <input class="form-check-input" type="radio" name="flagCusto" id="inlineRadio2" value="N">
                                 <label class="form-check-label" for="inlineRadio2">Não</label>
                               </div>
-                            </div>
+                            </div> 
+                            -->
                               
                             
                             <button type="submit" class="btn btn-outline-primary">

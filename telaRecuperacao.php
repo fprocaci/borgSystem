@@ -37,8 +37,8 @@
         mysqli_query($conn,'SET character_set_results=utf8');
         $resultado = mysqli_query($conn,$query);
         $registro = mysqli_fetch_assoc($resultado);
-
     ?>
+
     <div class="content">
       <div class="container-fluid">
         <div class="row">
