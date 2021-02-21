@@ -6,7 +6,7 @@ mysqli_query($conn, 'SET character_set_results=utf8');
 
 if (isset($_POST['numeroProcesso']))
   $numeroProcesso = $_POST['numeroProcesso'];
-$queryGetRegistros = "select * from controle_de_honorarios_csv ";
+$queryGetRegistros = "select * from controle_de_honorarios_csv";
 //$queryGetRegistros = "select * from historico";
 $resultCount = mysqli_query($conn, "select count(*) as total_records from controle_de_honorarios_csv");
 $total_records = mysqli_fetch_array($resultCount);

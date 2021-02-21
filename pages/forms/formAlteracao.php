@@ -50,8 +50,15 @@ $objSalarioMinimo = mysqli_query($conn, $queryGetSalarioMinimo);
         <input class="form-control form-control-sm col-6" value="<?php echo $registro['situacao'] ?>" type="text" name="situacao" placeholder="" autocomplete="off">
     </div>
     <div class="form-group">
-        <label for="perito">Colaborador</label>
-        <input class="form-control form-control-sm col-6" value="<?php echo $registro['perito'] ?>" type="text" name="perito" placeholder="" autocomplete="off">
+      <label for="perito">Colaborador</label>
+        <?php
+        while ($row = mysqli_fetch_assoc($arrayColaborador)) {
+            echo $row["login"];
+        }
+        ?>
+      </select>
+        
+      <!--  <input class="form-control form-control-sm col-6" value="<?php echo $registro['perito'] ?>" type="text" name="perito" placeholder="" autocomplete="off"> -->
     </div>
     <!--div class="form-group">
                               <div class="row">

@@ -3,16 +3,19 @@ include("phpclasses/conexao.php");
 include("phpclasses/header.php");
 
 $querySelect = "select distinct reu from controle_de_honorarios_csv";
+$queryColaborador = "select distinct login from usuarios";
 
 $arrayObj = mysqli_query($conn, $querySelect);
+$arrayColaborador = mysqli_query($conn, $queryColaborador);
+
 $obj = mysqli_fetch_assoc($arrayObj);
+$colaborador = mysqli_fetch_assoc($arrayColaborador);
 
 mysqli_query($conn, "SET NAMES 'utf8'");
 mysqli_query($conn, 'SET character_set_connection=utf8');
 mysqli_query($conn, 'SET character_set_client=utf8');
 mysqli_query($conn, 'SET character_set_results=utf8');
 ?>
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
