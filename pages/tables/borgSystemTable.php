@@ -62,7 +62,7 @@ $second_last = $total_no_of_pages - 1;
 
     <!-- <span class="input-group-text " id="filtro">Número do Processo</span>
               <input type="text" name="numeroProcesso" aria-label="numeroProcesso" aria-describedby="filtro"> -->
-    <button type="submit" class="btn btn-secondary ml-1"><i style="margin-right:5px" class="fas fa-search"></i>Buscar</span></button>
+    <button type="submit" class="btn btn-primary ml-1"><i style="margin-right:5px" class="fas fa-search"></i>Buscar</span></button>
     <!--<div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <a href="telaInclusao.php" class="btn btn-success ml-2" role="button" >
                     <i class="fas fa-plus-circle"></i>
@@ -75,7 +75,7 @@ $second_last = $total_no_of_pages - 1;
 
 <table class="table  table-hover table-bordered">
   <thead>
-    <tr class="bg-info">
+    <tr class="">
       <!--  <th scope="col">#</th> -->
       <th scope="col">Numero do Processo</th>
       <!--  <th scope="col">Autor</th> -->
@@ -126,15 +126,15 @@ $second_last = $total_no_of_pages - 1;
       echo '<td>
                       <div class="btn-group" role="group" aria-label="Basic outlined example">
                         <a href="phpclasses/encerraHonorario.php?id=' . $row["numeroProcesso"] . '&&id2=500">
-                          <button type="button" class="btn btn-primary">Sim</button>
+                          <button type="button" class="btn btn-outline-primary">Sim</button>
                         </a>
                         <a href="phpclasses/encerraHonorario.php?id=' . $row["numeroProcesso"] . '&&id2=' . $row["valor"] . '">
-                          <button type="button" class="btn btn-danger">Não</button>
+                          <button type="button" class="btn btn-outline-primary">Não</button>
                         </a>
                       </div>
                     </td>';
       echo "<td><a href='telaAlteracao.php?id=" . $row["numeroProcesso"] . "'><button type='button' class='btn btn-sm btn-primary mr-1' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i> Editar</button></a>";
-      echo "<a href='telaExclusao.php?id=" . $row["numeroProcesso"] . "'><button type='button' class='btn btn-sm btn-danger mr-1'><i class='far fa-trash-alt'></i> Excluir</button></a>";
+      echo "<a href='telaExclusao.php?id=" . $row["numeroProcesso"] . "'><button type='button' class='btn btn-sm btn-secondary mr-1'><i class='far fa-trash-alt'></i> Excluir</button></a>";
       //echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-success'><i class='far fa-trash-alt'></i> Modal</button></a>";
       echo "</td>";
       echo "</tr>";

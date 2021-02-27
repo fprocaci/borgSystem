@@ -115,6 +115,6 @@ $objSalarioMinimo = mysqli_query($conn, $queryGetSalarioMinimo);
                                 <label class="form-check-label" for="inlineRadio2">Não</label>
                               </div>
                             </div>-->
-    <button type="submit" class="btn btn-outline-primary"><i style="margin-right:10px;" class="far fa-share-square"></i>Salvar</button>
-    <a href="starter.php"><button type="button" class="btn btn-outline-danger"><i style="margin-right:10px;" class="far fa-times-circle"></i>Cancelar</button></a>
+    <button type="submit" class="btn btn-primary"><i style="margin-right:10px;" class="far fa-share-square"></i>Salvar</button>
+    <a href="starter.php"><button type="button" class="btn btn-secondary"><i style="margin-right:10px;" class="far fa-times-circle"></i>Cancelar</button></a>
 </form>
