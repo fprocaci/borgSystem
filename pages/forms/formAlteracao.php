@@ -28,14 +28,8 @@ $objSalarioMinimo = mysqli_query($conn, $queryGetSalarioMinimo);
     <!--Salarios minimos -->
     <label for="valor">Valor</label>
     <div class="input-group mb-3">
-        <span for="valor" class="input-group-text">Salarios Minimos</span>
         <input class="form-control col-2" value="<?php
-                                                    if (mysqli_num_rows($objSalarioMinimo) > 0) {
-                                                        while ($row = mysqli_fetch_assoc($objSalarioMinimo)) {
-                                                            $valor = $registro['valor'] / $row["salarioMinimo"];
-                                                        }
-                                                    }
-                                                    echo $valor;
+                                                    echo $registro["valor"];
                                                     ?>" type="number" name="valor" placeholder="" required autocomplete="off">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -52,12 +46,16 @@ $objSalarioMinimo = mysqli_query($conn, $queryGetSalarioMinimo);
               </div>
               <div class="modal-body">
                   <div class="form-group">
-                      <label for="numeroProcesso" class="form-label">Valor Inicial do Processo</label>
-                      <input class="form-control form-control-sm col-6" type="text" name="numeroProcesso" autocomplete="off" required>
+                      <label for="valorInicial" class="form-label">Valor Inicial do Processo</label>
+                      <input class="form-control form-control-sm col-6" type="text" name="valorInicial" value="<?php
+                                                    echo $registro["valor"];
+                                                    ?>" autocomplete="off" required>
                   </div>
                   <div class="form-group">
-                      <label for="autor" class="form-label">Ultimo Valor do Processo</label>
-                      <input class="form-control form-control-sm col-6" type="text" name="autor" autocomplete="off" required>
+                      <label for="valorAtualizado" class="form-label">Ultimo Valor do Processo</label>
+                      <input class="form-control form-control-sm col-6" type="text" name="valorAtualizado" value="<?php
+                                                    echo $registro["valorAtualizado"];
+                                                    ?>" autocomplete="off" required>
                   </div>
                   <div class="form-group">
                       <label for="autor" class="form-label">Valor a Descontar</label>
