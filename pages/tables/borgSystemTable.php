@@ -78,7 +78,7 @@ $second_last = $total_no_of_pages - 1;
     <tr class="">
       <!--  <th scope="col">#</th> -->
       <th scope="col">Numero do Processo</th>
-      <!--  <th scope="col">Autor</th> -->
+      <th scope="col">Autor</th> 
       <th scope="col">Réu</th>
       <th scope="col">Valor</th>
       <th scope="col">Situação</th>
@@ -93,6 +93,7 @@ $second_last = $total_no_of_pages - 1;
       echo "<tr>";
       /*     echo "<th scope='row'>".$row["indice"]."</th>"; */
       echo "<td scope='row'>" . $row["numeroProcesso"] . "</td>";
+      echo "<td scope='row'>" . $row["autor"] . "</td>";
       //     echo "<td>".$row["autor"]."</td>";
       echo "<td>" . $row["reu"] . "</td>";
       $campoValor;
@@ -100,14 +101,22 @@ $second_last = $total_no_of_pages - 1;
         "<td>R$" . substr($row["valor"], 0, 1) . "." . substr($row["valor"], 1, 10) . "</td>" :
         "<td>R$" . $row["valor"] . "</td>";
       echo $campoValor;
-      if ($row["situacao"] <> "")
-        echo '<td>' . $row["situacao"] . '<br><br>
-                  <a href="telaHistoricoStatus.php?id=' . $row["numeroProcesso"] . '">
-                    <button type="button" class="btn btn-primary">Historico</button>
-                  </td>
-                </a>';
-      else
-        echo '<td>' . $row["situacao"] . '</td>';
+      echo '<td>
+              <button type="button" 
+                      onclick="carregaDados('.$row["autor"].')" 
+                      class="btn btn-sm btn-success" 
+                      data-bs-toggle="modal" 
+                      numeroProcesso="'.$row["numeroProcesso"].'" 
+                      colaborador="'.$row["perito"].'"
+                      data-bs-target="#incluindoSituacao">
+                <i class="far fa-plus-square"></i>
+              </button>
+              ';
+      require("pages/modalSituacao.php");
+      
+      echo  ' <br><br>
+              <i class="fas btn-primary btn btn-sm fa-list-ul"></i>
+            </td>';
       //echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
       //echo " Histórico";
       //echo "<div class='collapse' id='collapseButton'>";
@@ -126,15 +135,15 @@ $second_last = $total_no_of_pages - 1;
       echo '<td>
                       <div class="btn-group" role="group" aria-label="Basic outlined example">
                         <a href="phpclasses/encerraHonorario.php?id=' . $row["numeroProcesso"] . '&&id2=500">
-                          <button type="button" class="btn btn-outline-primary">Sim</button>
+                          <button type="button" class="btn btn-sm btn-outline-primary">Sim</button>
                         </a>
                         <a href="phpclasses/encerraHonorario.php?id=' . $row["numeroProcesso"] . '&&id2=' . $row["valor"] . '">
-                          <button type="button" class="btn btn-outline-primary">Não</button>
+                          <button type="button" class="btn btn-sm btn-outline-primary">Não</button>
                         </a>
                       </div>
                     </td>';
-      echo "<td><a href='telaAlteracao.php?id=" . $row["numeroProcesso"] . "'><button type='button' class='btn btn-sm btn-primary mr-1' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i> Editar</button></a>";
-      echo "<a href='telaExclusao.php?id=" . $row["numeroProcesso"] . "'><button type='button' class='btn btn-sm btn-secondary mr-1'><i class='far fa-trash-alt'></i> Excluir</button></a>";
+      echo "<td><a href='telaAlteracao.php?id=" . $row["numeroProcesso"] . "'><button type='button' class='btn btn-sm btn-primary mr-1' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i></button></a>";
+      echo "<br><br><a href='telaExclusao.php?id=" . $row["numeroProcesso"] . "'><button type='button' class='btn btn-sm btn-secondary mr-1'><i class='far fa-trash-alt'></i></button></a>";
       //echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-success'><i class='far fa-trash-alt'></i> Modal</button></a>";
       echo "</td>";
       echo "</tr>";

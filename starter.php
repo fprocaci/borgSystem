@@ -36,4 +36,28 @@
   <!-- /.content-wrapper -->
 
 <?php include("phpclasses/footer.php")?>
-  
+<script>
+    var incluindoSituacao = document.getElementById('incluindoSituacao')
+    incluindoSituacao.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        var button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        var numeroProcesso = button.getAttribute('numeroProcesso')
+        var colaborador = button.getAttribute('colaborador')
+        // If necessary, you could initiate an AJAX request here and then do the
+        // updating in a callback.
+        //
+        // Update the modal's content.
+        var modalTitle = incluindoSituacao.querySelector('.modal-title')
+        var inputNumeroProcesso = incluindoSituacao.querySelector('.modal-body input[name="numeroProcesso"]')
+        var inputColaborador = incluindoSituacao.querySelector('.modal-body input[name="perito"]')
+        var inputColaboradorAtual = incluindoSituacao.querySelector('.modal-body input[name="colaboradorAtual"]')
+        var inputColaboradorProximo = incluindoSituacao.querySelector('.modal-body input[name="colaboradorProximo"]')
+
+        modalTitle.textContent = 'Atualizando Situação'
+        inputNumeroProcesso.value = numeroProcesso
+        inputColaborador.value = colaborador
+        inputColaboradorAtual.value = colaborador
+        inputColaboradorProximo.value = colaborador
+    })
+</script>
