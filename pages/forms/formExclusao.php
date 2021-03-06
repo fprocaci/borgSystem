@@ -21,14 +21,8 @@ $objSalarioMinimo = mysqli_query($conn, $queryGetSalarioMinimo);
     </div>
     <label for="valor">Valor</label>
     <div class="input-group mb-3">
-        <span for="valor" class="input-group-text">Salarios Minimos</span>
-        <input class="form-control col-2" value="<?php
-                                                    if (mysqli_num_rows($objSalarioMinimo) > 0) {
-                                                        while ($row = mysqli_fetch_assoc($objSalarioMinimo)) {
-                                                            $valor = $registro['valor'] / $row["salarioMinimo"];
-                                                        }
-                                                    }
-                                                    echo $valor;
+        <input class="form-control col-6" value="<?php
+                                                    echo $registro['valor'];
                                                     ?>" type="number" name="valor" placeholder="" required disabled autocomplete="off">
     </div>
     <div class="form-group">
@@ -55,17 +49,17 @@ $objSalarioMinimo = mysqli_query($conn, $queryGetSalarioMinimo);
                                 <label class="form-check-label" for="inlineRadio2">Não</label>
                               </div>
                             </div>
-                            -->
-    <a href="phpclasses/excluirRegistro.php?id='<?php echo $registro["numeroProcesso"] ?>'">
-        <button type="button" class="btn btn-outline-primary">
-            <i class="fas fa-trash-alt" style="margin-right:10px;"></i>
-            Excluir
+                            --> 
+    <a href="starter.php">
+        <button type="button" class="btn btn-secondary col-3">
+            <!--<i class="far fa-times-circle" style="margin-right:10px;"></i>-->
+            Cancelar
         </button>
     </a>
-    <a href="starter.php">
-        <button type="button" class="btn btn-outline-danger">
-            <i class="far fa-times-circle" style="margin-right:10px;"></i>
-            Cancelar
+    <a href="phpclasses/excluirRegistro.php?id='<?php echo $registro["numeroProcesso"] ?>'">
+        <button type="button" class="btn btn-primary col-3">
+            <!--<i class="fas fa-trash-alt" style="margin-right:10px;"></i>-->
+            Excluir
         </button>
     </a>
 </form>

@@ -36,16 +36,16 @@
         }
         ?>
     </datalist>
-    <label for="valor">Valor</label>
-    <div class="input-group mb-3">
-        <span for="valor" class="input-group-text">Salarios Minimos</span>
-        <input
-            class="form-control col-2"
-            type="number"
-            name="valor"
-            placeholder=""
-            required="required"
-            autocomplete="off">
+    <div class="form-group">
+        <label for="valor">Valor</label>
+        <div class="input-group mb-3">
+            <input
+                class="form-control col-6"
+                type="number"
+                name="valor"
+                required="required"
+                autocomplete="off">
+        </div>
     </div>
     <div class="form-group">
         <label for="situacao" class="form-label">Situação</label>
@@ -73,14 +73,15 @@
     type="radio" name="flagCusto" id="inlineRadio2" value="N"> <label
     class="form-check-label" for="inlineRadio2">Não</label> </div> </div> -->
 
-    <button type="submit" class="btn btn-outline-primary">
-        <i class="fas fa-plus" style="margin-right:10px;"></i>
-        Incluir
-    </button>
+    
     <a href="starter.php">
-        <button type="button" class="btn btn-outline-danger">
-            <i class="fas fa-times" style="margin-right:10px;"></i>
+        <button type="button" class="btn col-3 btn-secondary">
+            <!--<i class="fas fa-times" style="margin-right:10px;"></i> -->
             Cancelar
         </button>
     </a>
+    <button type="submit" class="btn col-3 btn-primary">
+        <!--<i class="fas fa-plus" style="margin-right:10px;"></i>-->
+        Incluir
+    </button>
 </form>

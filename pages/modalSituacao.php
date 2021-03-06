@@ -36,16 +36,7 @@
                             autocomplete="off"
                             required="required">
                     </div>
-                    <div class="form-group">
-                        <!--<label for="perito" class="form-label">Colaborador</label>-->
-                        <input
-                            class="form-control form-control-sm col-6"
-                            type="text"
-                            name="perito"
-                            autocomplete="off"
-                            required="required"
-                            hidden>
-                    </div>
+                    
                     <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" 
                     data-bs-target="#proximoColaborador" aria-expanded="false" 
                     aria-controls="proximoColaborador">Alterar Colaborador</button>  

@@ -26,24 +26,23 @@ $objSalarioMinimo = mysqli_query($conn, $queryGetSalarioMinimo);
         ?>
     </datalist>
     <!--Salarios minimos -->
-    <label for="valor">Valor</label>
+    <!--<label for="valor">Valor</label>
     <div class="input-group mb-3">
         <input class="form-control col-2" value="<?php
-                                                    echo $registro["valor"];
+                                                    /* echo $registro["valor"]; */
                                                     ?>" type="number" name="valor" placeholder="" required autocomplete="off">
 
     </div>
-    <!--
-                            <div class="form-group">
-                                <label for="valor">Valor</label>
-                                <input class="form-control form-control-sm col-6" value="<?php echo $registro['valor'] ?>"
-                                 type="text" name="valor" placeholder="" required autocomplete="off">
-                            </div>
-                            -->
-    <div class="form-group">
+    -->
+      <div class="form-group">
+          <label for="valor">Valor</label>
+          <input class="form-control form-control-sm col-6" value="<?php echo $registro['valor'] ?>"
+          type="number" name="valor" placeholder="" required autocomplete="off">
+      </div>
+    <!--<div class="form-group">
         <label for="situacao">Situação</label>
         <input class="form-control form-control-sm col-6" value="<?php echo $registro['situacao'] ?>" type="text" name="situacao" placeholder="" autocomplete="off">
-    </div>
+    </div>-->
     <div class="form-group">
       <label for="perito">Colaborador</label>
         <?/*
@@ -72,6 +71,15 @@ $objSalarioMinimo = mysqli_query($conn, $queryGetSalarioMinimo);
                                 <label class="form-check-label" for="inlineRadio2">Não</label>
                               </div>
                             </div>-->
-    <button type="submit" class="btn btn-primary"><i style="margin-right:10px;" class="far fa-share-square"></i>Salvar</button>
-    <a href="starter.php"><button type="button" class="btn btn-secondary"><i style="margin-right:10px;" class="far fa-times-circle"></i>Cancelar</button></a>
+    
+    <a href="starter.php">
+      <button type="button" class="btn btn-secondary col-3">
+        <!--<i style="margin-right:10px;" class="far fa-times-circle"></i>-->
+        Cancelar
+      </button>
+    </a>
+    <button type="submit" class="btn btn-primary col-3">
+      <!--<i style="margin-right:10px;" class="far fa-share-square"></i>-->
+      Salvar
+    </button>
 </form>

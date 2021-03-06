@@ -24,16 +24,16 @@
                     <span class="input-group-text">Novo Salario Minimo:</span>
                     <input type="text" name="salarioMinimo" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-outline-primary">
-                    <i class="fas fa-plus" style="margin-right:10px;"></i>
-                    Salvar
-                </button>
                 <a href="starter.php">
-                    <button type="button" class="btn btn-outline-danger">
-                        <i class="fas fa-times" style="margin-right:10px;"></i>
+                    <button type="button" class="btn col-5 btn-secondary">
+                        <!--<i class="fas fa-times" style="margin-right:10px;"></i>-->
                         Cancelar
                     </button>
                 </a>
+                <button type="submit" class="btn col-5 btn-primary">
+                    <!--<i class="fas fa-plus" style="margin-right:10px;"></i>-->
+                    Salvar
+                </button>
             </form>                      
         </div>
     </div>

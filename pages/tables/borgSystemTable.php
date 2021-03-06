@@ -102,8 +102,7 @@ $second_last = $total_no_of_pages - 1;
         "<td>R$" . $row["valor"] . "</td>";
       echo $campoValor;
       echo '<td>
-              <button type="button" 
-                      onclick="carregaDados('.$row["autor"].')" 
+              <button type="button"  
                       class="btn btn-sm btn-success" 
                       data-bs-toggle="modal" 
                       numeroProcesso="'.$row["numeroProcesso"].'" 
@@ -115,8 +114,16 @@ $second_last = $total_no_of_pages - 1;
       require("pages/modalSituacao.php");
       
       echo  ' <br><br>
-              <i class="fas btn-primary btn btn-sm fa-list-ul"></i>
-            </td>';
+              <button type="button"  
+              class="btn-primary btn btn-sm" 
+              data-bs-toggle="modal" 
+              situacao="'.$row["situacao"].'"
+              data-bs-target="#historicoSituacao">
+              <i class="fas fa-list-ul"></i></button>';
+      
+      require("pages/modalHistoricoSituacao.php");      
+            
+      echo      '</td>';
       //echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
       //echo " Histórico";
       //echo "<div class='collapse' id='collapseButton'>";
