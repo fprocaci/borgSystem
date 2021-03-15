@@ -43,35 +43,150 @@ $adjacents = "2";
 $second_last = $total_no_of_pages - 1;
 ?>
 
-<form method="POST" class="form-inline" action="#">
-  <div class="input-group mb-2">
+<div class="row">
+  <div class="col-6">
+    <form method="POST" class="form-inline" action="#">
+      <div class="input-group mb-2">
 
-    <div class="input-group-prepend">
-      <!-- <div class="input-group-text" id="filtro">Pesquisa</div> -->
-      <select class="custom-select input-group-text" name="tipoFiltro" id="inlineFormCustomSelect">
-        <!--  <option class="input-group-text" id="filtro" selected>Filtro...</option> -->
-        <option class="input-group-text" value="numeroProcesso" id="#">Processo</option>
-        <option class="input-group-text" value="autor" id="#">Autor</option>
-        <option class="input-group-text" value="reu" id="#">Réu</option>
-        <option class="input-group-text" value="perito" id="#">Colaborador</option>
-      </select>
-    </div>
-    <input type="text" class="form-control" id="inlineFormInputGroup" name="valorFiltro" aria-label="numeroProcesso" aria-describedby="filtro" autocomplete="off" placeholder=". . .">
+        <div class="input-group-prepend">
+          <!-- <div class="input-group-text" id="filtro">Pesquisa</div> -->
+          <select class="custom-select input-group-text" name="tipoFiltro" id="inlineFormCustomSelect">
+            <!--  <option class="input-group-text" id="filtro" selected>Filtro...</option> -->
+            <option class="input-group-text" value="numeroProcesso" id="#">Processo</option>
+            <option class="input-group-text" value="autor" id="#">Autor</option>
+            <option class="input-group-text" value="reu" id="#">Réu</option>
+            <option class="input-group-text" value="perito" id="#">Colaborador</option>
+          </select>
+        </div>
+        <input type="text" class="form-control" id="inlineFormInputGroup" name="valorFiltro" aria-label="numeroProcesso" aria-describedby="filtro" autocomplete="off" placeholder=". . .">
 
 
 
-    <!-- <span class="input-group-text " id="filtro">Número do Processo</span>
-              <input type="text" name="numeroProcesso" aria-label="numeroProcesso" aria-describedby="filtro"> -->
-    <button type="submit" class="btn btn-primary ml-1"><i style="margin-right:5px" class="fas fa-search"></i>Buscar</span></button>
-    <!--<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a href="telaInclusao.php" class="btn btn-success ml-2" role="button" >
-                    <i class="fas fa-plus-circle"></i>
-                    Novo Registro
-                </a>
-                
-              </div> -->
+        <!-- <span class="input-group-text " id="filtro">Número do Processo</span>
+                  <input type="text" name="numeroProcesso" aria-label="numeroProcesso" aria-describedby="filtro"> -->
+        <button type="submit" class="btn btn-primary ml-1"><i style="margin-right:5px" class="fas fa-search"></i>Buscar</span></button>
+        <!--<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="telaInclusao.php" class="btn btn-success ml-2" role="button" >
+                        <i class="fas fa-plus-circle"></i>
+                        Novo Registro
+                    </a>
+                    
+                  </div> -->
+      </div>
+    </form>
   </div>
-</form>
+  <div class="col d-grid  d-md-flex mb-2 justify-content-md-end">
+    <button type="button" 
+            data-bs-toggle="modal"
+            class="btn bt-sm btn-success"
+            data-bs-target="#incluiRegistro">
+            Incluir Registro
+    </button>
+    <div class="modal fade" id="incluiRegistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>
+              <i style="margin-right:10px" 
+                 class="fas fa-user-plus"></i>
+                 Incluir Registro</h3>
+            <button type="button" 
+                    class="btn-close" 
+                    data-bs-dismiss="modal" 
+                    aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form method="POST" action="phpclasses/incluirRegistro.php">
+                <div class="form-group">
+                    <label for="numeroProcesso" class="form-label">Número do Processo</label>
+                    <input
+                        class="form-control form-control-sm col-6"
+                        type="text"
+                        name="numeroProcesso"
+                        autocomplete="off"
+                        required="required">
+                </div>
+                <div class="form-group">
+                    <label for="autor" class="form-label">Autor</label>
+                    <input
+                        class="form-control form-control-sm col-6"
+                        type="text"
+                        name="autor"
+                        autocomplete="off"
+                        required="required">
+                </div>
+                <!-- -- Input text <div class="form-group"> <label for="reu">Réu</label> <input
+                class="form-control form-control-sm col-6" type="text" name="reu"
+                autocomplete="off" required> </div> -->
+
+                <!-- Datalist Réu -->
+                <label for="exampleDataList" class="form-label">Réu</label>
+                <input
+                    class="form-control mb-3 col-6"
+                    list="datalistOptions"
+                    autocomplete="off"
+                    name="reu"
+                    id="exampleDataList">
+                <datalist id="datalistOptions">
+                    
+                </datalist>
+                <div class="form-group">
+                    <label for="valor">Valor</label>
+                    <div class="input-group mb-3">
+                        <input
+                            class="form-control col-6"
+                            type="number"
+                            name="valor"
+                            required="required"
+                            autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="situacao" class="form-label">Situação</label>
+                    <input
+                        class="form-control form-control-sm col-6"
+                        type="text"
+                        name="situacao"
+                        autocomplete="off"
+                        required="required">
+                </div>
+                <div class="form-group">
+                    <label for="perito" class="form-label">Colaborador</label>
+                    <input
+                        class="form-control form-control-sm col-6"
+                        type="text"
+                        name="perito"
+                        autocomplete="off">
+                </div>
+
+                <!-- <div class="form-group"> <div class="row"> <label for="option1">Ajuda de
+                Custo</label> </div> <div class="form-check form-check-inline"> <input
+                class="form-check-input" type="radio" name="flagCusto" id="inlineRadio1"
+                value="S"> <label class="form-check-label" for="inlineRadio1">Sim</label> </div>
+                <div class="form-check form-check-inline"> <input class="form-check-input"
+                type="radio" name="flagCusto" id="inlineRadio2" value="N"> <label
+                class="form-check-label" for="inlineRadio2">Não</label> </div> </div> -->
+              </div>
+              <div class="modal-footer">
+                <a href="starter.php">
+                    <button type="button" class="btn btn-secondary">
+                        <!--<i class="fas fa-times" style="margin-right:10px;"></i> -->
+                        Cancelar
+                    </button>
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    <!--<i class="fas fa-plus" style="margin-right:10px;"></i>-->
+                    Incluir
+                </button>
+              </div>  
+                
+            </form>    
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 <table class="table  table-hover table-bordered">
   <thead>
@@ -96,32 +211,48 @@ $second_last = $total_no_of_pages - 1;
       echo "<td scope='row'>" . $row["autor"] . "</td>";
       //     echo "<td>".$row["autor"]."</td>";
       echo "<td>" . $row["reu"] . "</td>";
-      $campoValor;
-      $campoValor = (strlen($row["valor"]) > 3) ?
-        "<td>R$" . substr($row["valor"], 0, 1) . "." . substr($row["valor"], 1, 10) . "</td>" :
-        "<td>R$" . $row["valor"] . "</td>";
-      echo $campoValor;
+      $campoValor = $row["valor"];
+      //$campoValor = (strlen($row["valor"]) > 3) ?
+      //  "<td>R$" . substr($row["valor"], 0, 1) . "." . substr($row["valor"], 1, 10) . "</td>" :
+      //  "<td>R$" . $row["valor"] . "</td>";
+      echo '<td>R$'.number_format($campoValor,2,'.','').'</td>';
       echo '<td>
               <button type="button"  
                       class="btn btn-sm btn-success" 
                       data-bs-toggle="modal" 
                       numeroProcesso="'.$row["numeroProcesso"].'" 
                       colaborador="'.$row["perito"].'"
+                      valorAtualizado="'.$row["valorAtualizado"].'"
                       data-bs-target="#incluindoSituacao">
                 <i class="far fa-plus-square"></i>
               </button>
               ';
       require("pages/modalSituacao.php");
       
-      echo  ' <br><br>
+      //$queryGetHistorico = "select * from historico where numeroProcesso = ".$row["numeroProcesso"]."";
+      if($row["situacao"] == "")
+        echo  ' <br><br>
               <button type="button"  
-              class="btn-primary btn btn-sm" 
+              class="btn-secondary btn btn-sm" 
               data-bs-toggle="modal" 
+              disabled
               situacao="'.$row["situacao"].'"
               data-bs-target="#historicoSituacao">
-              <i class="fas fa-list-ul"></i></button>';
+              <i class="far fa-eye"></i></button>
+        ';
+      else
+        echo ' 
+              <br><br>
+              <button class="btn-outline-dark btn btn-sm view-data"
+                 data-bs-toggle="modal"
+                 numeroProcesso="'.$row["numeroProcesso"].'" 
+                 situacao="'.$row["situacao"].'">
+              <i class="far fa-eye"></i></button>
+
+              ';
       
-      require("pages/modalHistoricoSituacao.php");      
+      //require("pages/modalHistoricoSituacao.php");
+
             
       echo      '</td>';
       //echo "<a class='btn btn-xs btn-secondary' data-toggle='collapse' href='#collapseButton' role='button' aria-expanded='false' aria-controls='collapseButton'>";
@@ -139,6 +270,8 @@ $second_last = $total_no_of_pages - 1;
       //echo "</div>";
       //echo "</a></td>";
       echo "<td>" . $row["perito"] . "</td>";
+
+      //Ajuda de Custo?
       echo '<td>
                       <div class="btn-group" role="group" aria-label="Basic outlined example">
                         <a href="phpclasses/encerraHonorario.php?id=' . $row["numeroProcesso"] . '&&id2=500">
@@ -149,8 +282,184 @@ $second_last = $total_no_of_pages - 1;
                         </a>
                       </div>
                     </td>';
-      echo "<td><a href='telaAlteracao.php?id=" . $row["numeroProcesso"] . "'><button type='button' class='btn btn-sm btn-primary mr-1' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i></button></a>";
-      echo "<br><br><a href='telaExclusao.php?id=" . $row["numeroProcesso"] . "'><button type='button' class='btn btn-sm btn-secondary mr-1'><i class='far fa-trash-alt'></i></button></a>";
+      
+      //Ações
+      echo '<td>
+              <button type="button" 
+                      class="btn btn-sm btn-primary mr-1"
+                      data-bs-toggle="modal"
+                      numeroProcesso="'.$row["numeroProcesso"].'"
+                      autor="'.$row["autor"].'"
+                      reu="'.$row["reu"].'"
+                      valor="'.number_format($row["valor"],2,'.','').'"
+                      colaborador="'.$row["perito"].'" 
+                      data-bs-target="#alteraRegistro">
+                      <i class="fas fa-pencil-alt"></i>
+              </button>
+              
+              <div class="modal fade" id="alteraRegistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3><i style="margin-right:10px;" class="fas fa-user-edit"></i>Alterar Registro</h3>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form method="POST" action="phpclasses/alterarRegistro.php">
+                        <div class="form-group">
+                            <label for="numeroProcesso" hidden>Número do Processo</label>
+                            <input class="form-control form-control-sm col-6" 
+                                   type="text" 
+                                   name="numeroProcesso" 
+                                   placeholder="" 
+                                   required 
+                                   hidden 
+                                   autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="autor">Autor</label>
+                            <input class="form-control form-control-sm col-6" 
+                                   type="text" 
+                                   name="autor" 
+                                   placeholder="" 
+                                   required 
+                                   autocomplete="off">
+                        </div>
+                        
+                        <label for="exampleDataList" class="form-label">Réu</label>
+                        <input class="form-control mb-3 col-6" 
+                               autocomplete="off" 
+                               list="datalistOptions" 
+                               name="reu" 
+                               id="exampleDataList">
+                        <datalist id="datalistOptions">
+                        </datalist>
+                      
+                          <div class="form-group">
+                              <label for="valor">Valor</label>
+                              <input class="form-control form-control-sm col-6"
+                                     type="text" 
+                                     name="valor" 
+                                     placeholder="" 
+                                     required 
+                                     autocomplete="off">
+                          </div>
+                        
+                        <div class="form-group">
+                          <label for="perito">Colaborador</label>
+                          <input class="form-control form-control-sm col-6" 
+                                 type="text" 
+                                 name="perito" 
+                                 placeholder="" 
+                                 autocomplete="off">
+                        </div>
+                        <div class="modal-footer">
+                        <a href="starter.php">
+                          <button type="button" class="btn btn-secondary">
+                            Cancelar
+                          </button>
+                        </a>
+                          <button type="submit" class="btn btn-primary">
+                            Salvar
+                          </button>
+                        </div>                      
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ';           
+         
+      //echo "<td><a href='telaAlteracao.php?id=" . $row["numeroProcesso"] . "'><button type='button' class='btn btn-sm btn-primary mr-1' data-toggle='modal' data-target='#modalAlteracao'><i class='fas fa-pencil-alt'></i></button></a>";
+      echo '<br><br>
+            <button type="button" 
+                    data-bs-toggle="modal"
+                    numeroProcesso="'.$row["numeroProcesso"].'"
+                    autor="'.$row["autor"].'"
+                    reu="'.$row["reu"].'"
+                    valor="'.number_format($row["valor"],2,'.','').'"
+                    colaborador="'.$row["perito"].'"
+                    class="btn btn-sm btn-danger mr-1"
+                    data-bs-target="#excluiRegistro">
+                    <i class="far fa-trash-alt"></i>
+            </button>
+            
+            <div class="modal fade" id="excluiRegistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3><i class="fas fa-user-times" style="margin-right:10px;"></i>Excluir Registro</h3>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form method="POST" action="phpclasses/excluirRegistro.php">
+                        <div class="form-group">
+                            <label for="numeroProcesso" hidden>Número do Processo</label>
+                            <input class="form-control form-control-sm col-6" 
+                                   type="text" 
+                                   name="numeroProcesso" 
+                                   placeholder="" 
+                                   required 
+                                   hidden 
+                                   autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="autor">Autor</label>
+                            <input class="form-control form-control-sm col-6" 
+                                   type="text" 
+                                   name="autor" 
+                                   placeholder="" 
+                                   required 
+                                   autocomplete="off"
+                                   disabled>
+                        </div>
+                        
+                        <label for="exampleDataList" class="form-label">Réu</label>
+                        <input class="form-control mb-3 col-6" 
+                               autocomplete="off" 
+                               list="datalistOptions" 
+                               name="reu" 
+                               id="exampleDataList"
+                               disabled>
+                        <datalist id="datalistOptions">
+                        </datalist>
+                      
+                          <div class="form-group">
+                              <label for="valor">Valor</label>
+                              <input class="form-control form-control-sm col-6"
+                                     type="text" 
+                                     name="valor" 
+                                     placeholder="" 
+                                     required 
+                                     autocomplete="off"
+                                     disabled>
+                          </div>
+                        
+                        <div class="form-group">
+                          <label for="perito">Colaborador</label>
+                          <input class="form-control form-control-sm col-6" 
+                                 type="text" 
+                                 name="perito" 
+                                 placeholder="" 
+                                 autocomplete="off"
+                                 disabled>
+                        </div>
+                        <div class="modal-footer">
+                        <a href="starter.php">
+                          <button type="button" class="btn btn-secondary">
+                            Cancelar
+                          </button>
+                        </a>
+                          <button type="submit" class="btn btn-primary">
+                            Excluir
+                          </button>
+                        </div>                      
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>';
+      //echo "<br><br><a href='telaExclusao.php?id=" . $row["numeroProcesso"] . "'><button type='button' class='btn btn-sm btn-secondary mr-1'><i class='far fa-trash-alt'></i></button></a>";
       //echo "<a href='telaExclusao.php?id=".$row["numeroProcesso"]."'><button type='button' class='btn btn-sm btn-success'><i class='far fa-trash-alt'></i> Modal</button></a>";
       echo "</td>";
       echo "</tr>";
@@ -197,3 +506,20 @@ $second_last = $total_no_of_pages - 1;
     echo "<li class='page-item'><a class='page-link' href='?page_no=$total_no_of_pages'>Ultima &rsaquo;&rsaquo;</a></li>";
   ?>
 </ul>
+
+<div class="modal fade" id="historicoSituacao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Visualizar Situação</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3" id="registroHistorico">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,19 +1,12 @@
 <?php
     include("conexao.php");
 
-    $numeroProcesso = $_REQUEST['id'];
+    $numeroProcesso = $_POST['numeroProcesso'];
 
     $queryDelete = "Delete from controle_de_honorarios_csv where numeroProcesso = $numeroProcesso";
     $querySelect = "select * from controle_de_honorarios_csv where numeroProcesso = $numeroProcesso";
     $queryGetSalarioMinimo = "select * from configuration";
 
-    $objSalarioMinimo = mysqli_query($conn, $queryGetSalarioMinimo);
-
-    if (mysqli_num_rows($objSalarioMinimo) > 0) {
-        while ($row = mysqli_fetch_assoc($objSalarioMinimo)) {
-            $valor = $_POST['valor'] * $row["salarioMinimo"];
-        }
-    }
 
     $arrayObj = mysqli_query($conn,$querySelect);
     $obj = mysqli_fetch_assoc($arrayObj);

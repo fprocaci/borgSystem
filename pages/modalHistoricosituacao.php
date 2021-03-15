@@ -6,12 +6,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
           <div class="mb-3">
             <label for="situacao" class="col-form-label">Situacao Atual</label>
             <input type="text" class="form-control" name="situacao" id="situacao" readonly>
           </div>
-        </form>
       </div>
     </div>
   </div>

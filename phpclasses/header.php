@@ -51,8 +51,18 @@
   <ul class="navbar-nav">
     <li class="nav-item">
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      
     </li>
   </ul>
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="btn btn-danger text-white btn-outline-secondary text-left" href="phpclasses/logout.php">
+                <i class="fas fa-sign-out-alt" style="margin-right:10px"></i>Sair
+              </a>    
+            </li>
+        </ul>
+    </div>
 </nav>
 <!-- /.navbar -->
 
@@ -92,9 +102,9 @@
         <a class="btn btn-outline-secondary text-white text-left" style="margin-bottom:10px" href="starter.php">
           <i class="fas fa-search" style="margin-right:10px"></i>Tela de Consulta
         </a>
-        <a class="btn btn-outline-secondary text-white text-left" style="margin-bottom:10px" href="telaInclusao.php">
+        <!--<a class="btn btn-outline-secondary text-white text-left" style="margin-bottom:10px" href="telaInclusao.php">
           <i class="fas fa-plus-circle" style="margin-right:10px"></i>Tela de Inclusão
-        </a>
+        </a>-->
         <?php //if(isset($_SESSION['username']) && (($_SESSION['username'] == "Matheus") || ($_SESSION['username'] == "Procaci"))){?>
           <a style="margin-bottom:10px" href="telaRelatorio.php">
             <button class="col-12 btn btn-outline-secondary text-white text-left">
@@ -128,9 +138,9 @@
             <span class="badge bg-danger">Em breve</span>
           </button>
         </a> -->
-        <a class="btn btn-danger text-white btn-outline-secondary text-left" href="phpclasses/logout.php">
+        <!--<a class="btn btn-danger text-white btn-outline-secondary text-left" href="phpclasses/logout.php">
           <i class="fas fa-sign-out-alt" style="margin-right:10px"></i>Sair
-        </a>
+        </a>-->
 
       </ul>
     </nav>
