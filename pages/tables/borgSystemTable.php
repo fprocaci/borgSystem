@@ -474,39 +474,79 @@ $second_last = $total_no_of_pages - 1;
 <!--<div>
               <strong>Página:<?php /* echo $page_no." de ".$total_no_of_pages; */ ?> </strong>
         </div>-->
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group me-2" role="group" aria-label="First group">
+      <?php
+        switch ($total_no_of_pages) {
+          case $total_no_of_pages <= 10:
+            for ($counter = 1; $counter <= $total_no_of_pages; $counter++) {
+              if ($counter == $page_no)
+                echo '<a class=" active btn btn-outline-secondary">'.$counter.'</a>';
+              else
+                echo '<a class="btn btn-outline-secondary" 
+                         href="?page_no='.$counter.'">'.$counter.'</a>';
+            }
+            break;
+          
+          case $total_no_of_pages > 10 && $page_no <= 4:
+            			
+              for ($counter = 1; $counter < 8; $counter++){		 
+              if ($counter == $page_no) {
+                  echo '<a class="active btn btn-outline-secondary">'.$counter.'</a>';	
+              }else{
+                  echo '<a class=" btn btn-outline-secondary"
+                           href="?page_no='.$counter.'">'.$counter.'</a>';
+                }
+              }
+            echo '<a class="btn btn-outline-secondary">...</a>';
+            echo '<a class="btn btn-outline-secondary" href="?page_no='.$second_last.'">'.$second_last.'</a>';
+            echo '<a class="btn btn-outline-secondary" href="?page_no='.$total_no_of_pages.'">'.$total_no_of_pages.'</a>';
+            
+            break;
 
-<ul class="pagination">
-  <?php
-  if ($page_no > 1) echo "<li class ='page-item'><a href='?page_no=1' class='page-link'>Inicio</a></li>"
-  ?>
-  <li class="page-item <?php if ($page_no <= 1) echo "disabled"; ?>">
-    <a class="page-link" <?php if ($page_no > 1) echo " href='?page_no = $previous_page'"; ?>>Anterior</a>
-  </li>
+          case $total_no_of_pages > 10 && $page_no > 4 && $page_no < $total_no_of_pages - 4:
+            echo '<a class="btn btn-outline-secondary" href="?page_no=1">1</a>';
+            echo '<a class="btn btn-outline-secondary" href="?page_no=2">2</a>';
+            echo '<a class="btn btn-outline-secondary">...</a>';
+            for (
+                $counter = $page_no - $adjacents;
+                $counter <= $page_no + $adjacents;
+                $counter++
+                ) { 
+                if ($counter == $page_no) {
+                  echo '<a class="active btn btn-outline-secondary">'.$counter.'</a>'; 
+                }else{
+                    echo '<a class="btn btn-outline-secondary" href="?page_no='.$counter.'">'.$counter.'</a>';
+                      }                  
+                  }
+            echo '<a class="btn btn-outline-secondary">...</a>';
+            echo '<a class="btn btn-outline-secondary" href="?page_no='.$second_last.'">'.$second_last.'</a>';
+            echo '<a class="btn btn-outline-secondary" href="?page_no='.$total_no_of_pages.'">'.$total_no_of_pages.'</a>';
+            break;
 
-  <?php
-  if ($total_no_of_pages <= 10) {
-    for ($counter = 1; $counter <= $total_no_of_pages; $counter++) {
-      if ($counter == $page_no)
-        echo "<li class='active page-item'><a class='page-link'>$counter</a></li>";
-      else
-        echo "<li class='page-item'><a class='page-link' href='?page_no=$counter'>$counter</a></li>";
-    }
-  }
-  ?>
+          default:
+            echo '<a class="btn btn-outline-secondary" href="?page_no=1">1</a>';
+            echo '<a class="btn btn-outline-secondary" href="?page_no=2">2</a>';
+            echo '<a class="btn btn-outline-secondary">...</a>';
+            for (
+                $counter = $total_no_of_pages - 6;
+                $counter <= $total_no_of_pages;
+                $counter++
+                ) {
+                if ($counter == $page_no) {
+                  echo '<a class="active btn btn-outline-secondary">'.$counter.'</a>'; 
+                  }else{
+                    echo '<a class="btn btn-outline-secondary" href="?page_no='.$counter.'">'.$counter.'</a>';
+                  }                   
+            }
+            break;
+        }
+        
+      ?>
 
-  <li class="page-item <?php if ($page_no >= $total_no_of_pages) {
-                          echo "disabled";
-                        } ?>">
-    <a class="page-link" <?php if ($page_no < $total_no_of_pages) {
-                            echo "href='?page_no=$next_page'";
-                          } ?>>Próximo</a>
-  </li>
-  <?php
-  if ($page_no < $total_no_of_pages)
-    echo "<li class='page-item'><a class='page-link' href='?page_no=$total_no_of_pages'>Ultima &rsaquo;&rsaquo;</a></li>";
-  ?>
-</ul>
-
+    
+  </div>
+</div>
 <div class="modal fade" id="historicoSituacao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
